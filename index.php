@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-box">
       <h2>LOGIN</h2>
       <form method="POST">
-        <input type="email" name="email" placeholder="email" required>
-        <input type="password" name="password" placeholder="password" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
         <button type="submit">LOGIN</button>
         <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
         <a href="#">Forgot Password?</a>
