@@ -1,3 +1,4 @@
+<!--School ID, Yr Lvl, Full Name -->
 <?php
 // signup.php
 session_start();
