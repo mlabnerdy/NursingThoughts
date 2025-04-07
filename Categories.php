@@ -20,6 +20,7 @@
 </head>
 <body>
     <div class="container py-5">
+        <!--Sample-->
         <h1 class="text-center mb-5">Choose Your Learning Mode</h1>
         
         <div class="row justify-content-center g-4">
