@@ -12,10 +12,17 @@ session_start();
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="login.css"> <!-- make sure the filename matches your actual CSS file -->
 </head>
 <body>
 
+<!-- Video Background -->
+<video autoplay muted loop id="bgVideo">
+  <source src="IMAGE/For bg.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<!-- Login Form Container -->
 <div class="login-container">
   <form class="login-box shadow-lg rounded" method="POST" action="login_process.php">
     <h2 class="text-center fw-bold">LOGIN</h2>
@@ -36,7 +43,7 @@ session_start();
 
     <div class="mt-3 text-center">
       <span class="small">For new user click here to register</span>
-      <a href="register.php" class="text-decoration-none fw-bold text-warning"> SIGN UP</a>
+      <a href="signup.php" class="text-decoration-none fw-bold text-warning"> SIGN UP</a>
     </div>
   </form>
 </div>
