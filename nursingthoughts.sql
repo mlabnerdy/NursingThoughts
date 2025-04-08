@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2025 at 08:02 AM
+-- Generation Time: Apr 08, 2025 at 05:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,69 +29,106 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text DEFAULT NULL
+  `name` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `name`) VALUES
+(2, 'Guess the Photo'),
+(1, 'Quiz Game');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guess_the_photo_questions`
+--
+
+CREATE TABLE `guess_the_photo_questions` (
+  `photo_question_id` int(11) NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  `correct_answer` varchar(255) DEFAULT NULL,
+  `choice_a` varchar(255) DEFAULT NULL,
+  `choice_b` varchar(255) DEFAULT NULL,
+  `choice_c` varchar(255) DEFAULT NULL,
+  `choice_d` varchar(255) DEFAULT NULL,
+  `subject_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `flashcards`
+-- Table structure for table `leaderboards`
 --
 
-CREATE TABLE `flashcards` (
-  `card_id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `question` text NOT NULL,
-  `answer` text NOT NULL,
-  `difficulty` tinyint(4) DEFAULT 1 COMMENT '1-5 scale'
+CREATE TABLE `leaderboards` (
+  `leaderboard_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `total_score` int(11) DEFAULT 0,
+  `last_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game_sessions`
+-- Table structure for table `questions`
 --
 
-CREATE TABLE `game_sessions` (
-  `session_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `game_type` enum('flashcard','quiz','photo') NOT NULL,
-  `score` int(11) NOT NULL,
-  `total_questions` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `photo_questions`
---
-
-CREATE TABLE `photo_questions` (
-  `photo_id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `image_path` varchar(255) NOT NULL,
-  `correct_answer` varchar(255) NOT NULL,
-  `hint` text DEFAULT NULL,
-  `difficulty` tinyint(4) DEFAULT 1 COMMENT '1-5 scale'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quiz_questions`
---
-
-CREATE TABLE `quiz_questions` (
+CREATE TABLE `questions` (
   `question_id` int(11) NOT NULL,
+  `question_text` text DEFAULT NULL,
+  `correct_answer` varchar(255) DEFAULT NULL,
+  `choice_a` varchar(255) DEFAULT NULL,
+  `choice_b` varchar(255) DEFAULT NULL,
+  `choice_c` varchar(255) DEFAULT NULL,
+  `choice_d` varchar(255) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
-  `question` text NOT NULL,
-  `correct_answer` varchar(255) NOT NULL,
-  `option1` varchar(255) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) DEFAULT NULL,
-  `option4` varchar(255) DEFAULT NULL,
-  `difficulty` tinyint(4) DEFAULT 1 COMMENT '1-5 scale'
+  `subject_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz_game_questions`
+--
+
+CREATE TABLE `quiz_game_questions` (
+  `quiz_question_id` int(11) NOT NULL,
+  `question_text` text DEFAULT NULL,
+  `correct_answer` varchar(255) DEFAULT NULL,
+  `choice_a` varchar(255) DEFAULT NULL,
+  `choice_b` varchar(255) DEFAULT NULL,
+  `choice_c` varchar(255) DEFAULT NULL,
+  `choice_d` varchar(255) DEFAULT NULL,
+  `subject_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scores`
+--
+
+CREATE TABLE `scores` (
+  `score_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `subject_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `date_taken` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjects`
+--
+
+CREATE TABLE `subjects` (
+  `subject_id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -102,11 +139,11 @@ CREATE TABLE `quiz_questions` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password_hash` varchar(255) NOT NULL,
-  `SchoolID` varchar(20) DEFAULT NULL,
-  `FullName` varchar(100) DEFAULT NULL,
-  `YearLevel` int(11) DEFAULT NULL CHECK (`YearLevel` between 1 and 4)
+  `schoolID` varchar(50) DEFAULT NULL,
+  `fullName` varchar(100) DEFAULT NULL,
+  `YrLvl` varchar(10) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password_hash` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -117,34 +154,53 @@ CREATE TABLE `users` (
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category_id`);
+  ADD PRIMARY KEY (`category_id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `flashcards`
+-- Indexes for table `guess_the_photo_questions`
 --
-ALTER TABLE `flashcards`
-  ADD PRIMARY KEY (`card_id`),
-  ADD KEY `category_id` (`category_id`);
+ALTER TABLE `guess_the_photo_questions`
+  ADD PRIMARY KEY (`photo_question_id`),
+  ADD KEY `subject_id` (`subject_id`);
 
 --
--- Indexes for table `game_sessions`
+-- Indexes for table `leaderboards`
 --
-ALTER TABLE `game_sessions`
-  ADD PRIMARY KEY (`session_id`);
+ALTER TABLE `leaderboards`
+  ADD PRIMARY KEY (`leaderboard_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `photo_questions`
+-- Indexes for table `questions`
 --
-ALTER TABLE `photo_questions`
-  ADD PRIMARY KEY (`photo_id`),
-  ADD KEY `category_id` (`category_id`);
-
---
--- Indexes for table `quiz_questions`
---
-ALTER TABLE `quiz_questions`
+ALTER TABLE `questions`
   ADD PRIMARY KEY (`question_id`),
+  ADD KEY `category_id` (`category_id`),
+  ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `quiz_game_questions`
+--
+ALTER TABLE `quiz_game_questions`
+  ADD PRIMARY KEY (`quiz_question_id`),
+  ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `scores`
+--
+ALTER TABLE `scores`
+  ADD PRIMARY KEY (`score_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `subject_id` (`subject_id`),
   ADD KEY `category_id` (`category_id`);
+
+--
+-- Indexes for table `subjects`
+--
+ALTER TABLE `subjects`
+  ADD PRIMARY KEY (`subject_id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `users`
@@ -161,31 +217,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `flashcards`
+-- AUTO_INCREMENT for table `guess_the_photo_questions`
 --
-ALTER TABLE `flashcards`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `guess_the_photo_questions`
+  MODIFY `photo_question_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `game_sessions`
+-- AUTO_INCREMENT for table `leaderboards`
 --
-ALTER TABLE `game_sessions`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `leaderboards`
+  MODIFY `leaderboard_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `photo_questions`
+-- AUTO_INCREMENT for table `questions`
 --
-ALTER TABLE `photo_questions`
-  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `quiz_questions`
---
-ALTER TABLE `quiz_questions`
+ALTER TABLE `questions`
   MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `quiz_game_questions`
+--
+ALTER TABLE `quiz_game_questions`
+  MODIFY `quiz_question_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `scores`
+--
+ALTER TABLE `scores`
+  MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subjects`
+--
+ALTER TABLE `subjects`
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -198,22 +266,37 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `flashcards`
+-- Constraints for table `guess_the_photo_questions`
 --
-ALTER TABLE `flashcards`
-  ADD CONSTRAINT `flashcards_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
+ALTER TABLE `guess_the_photo_questions`
+  ADD CONSTRAINT `guess_the_photo_questions_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
 
 --
--- Constraints for table `photo_questions`
+-- Constraints for table `leaderboards`
 --
-ALTER TABLE `photo_questions`
-  ADD CONSTRAINT `photo_questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
+ALTER TABLE `leaderboards`
+  ADD CONSTRAINT `leaderboards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
--- Constraints for table `quiz_questions`
+-- Constraints for table `questions`
 --
-ALTER TABLE `quiz_questions`
-  ADD CONSTRAINT `quiz_questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
+ALTER TABLE `questions`
+  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`),
+  ADD CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
+
+--
+-- Constraints for table `quiz_game_questions`
+--
+ALTER TABLE `quiz_game_questions`
+  ADD CONSTRAINT `quiz_game_questions_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
+
+--
+-- Constraints for table `scores`
+--
+ALTER TABLE `scores`
+  ADD CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `scores_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`),
+  ADD CONSTRAINT `scores_ibfk_3` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
