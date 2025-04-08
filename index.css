@@ -1,0 +1,67 @@
+/* Full-screen background video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Welcome intro text styles */
+  .intro-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Box style for description paragraph */
+  .description-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    max-width: 700px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+  }
+  
+  .description-box p {
+    font-size: 1rem;
+    margin: 0;
+    color: #f8f9fa;
+    line-height: 1.6;
+  }
+
+
+  /* Faces section enhancements */
+  .container .row img {
+    transition: transform 0.3s ease;
+  }
+  
+  .container .row img:hover {
+    transform: scale(1.05);
+  }
+  
+  .container {
+    background-color: transparent !important;
+  }
+
+  .name-box {
+    background-color: rgba(170, 156, 156, 0.6);
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.95rem;
+    backdrop-filter: blur(4px);
+    max-width: 90%;
+    word-wrap: break-word;
+  }
+  
+  
