@@ -19,8 +19,8 @@ session_start();
     <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
-        <a class="nav-link active" href="Homepage.php">Home</a>
-        <a class="nav-link" href="Games.php">Games</a>
+        <a class="nav-link" href="Homepage.php">Home</a>
+        <a class="nav-link active" href="Games.php">Games</a>
         <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
       </div>
       <div class="nav-profile">
