@@ -1,0 +1,26 @@
+.card.category-card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    color: #f57c00; /* Orange icons */
+  }
+  
+  .btn-primary {
+    background-color: #f57c00;
+    border-color: #f57c00;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e56c00;
+    border-color: #e56c00;
+  }
+  
