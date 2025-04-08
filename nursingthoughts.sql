@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2025 at 05:03 AM
+-- Generation Time: Apr 08, 2025 at 07:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,20 +64,6 @@ CREATE TABLE `game_sessions` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `leaderboards`
--- (See below for the actual view)
---
-CREATE TABLE `leaderboards` (
-`user_id` int(11)
-,`username` varchar(50)
-,`games_played` bigint(21)
-,`total_score` decimal(32,0)
-,`accuracy_percentage` decimal(38,2)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `photo_questions`
 --
 
@@ -116,19 +102,12 @@ CREATE TABLE `quiz_questions` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password_hash` varchar(255) NOT NULL
+  `password_hash` varchar(255) NOT NULL,
+  `SchoolID` varchar(20) DEFAULT NULL,
+  `FullName` varchar(100) DEFAULT NULL,
+  `YearLevel` int(11) DEFAULT NULL CHECK (`YearLevel` between 1 and 4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure for view `leaderboards`
---
-DROP TABLE IF EXISTS `leaderboards`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `leaderboards`  AS SELECT `u`.`user_id` AS `user_id`, `u`.`username` AS `username`, count(`gs`.`session_id`) AS `games_played`, sum(`gs`.`score`) AS `total_score`, round(sum(`gs`.`score`) * 100.0 / sum(`gs`.`total_questions`),2) AS `accuracy_percentage` FROM (`users` `u` left join `game_sessions` `gs` on(`u`.`user_id` = `gs`.`user_id`)) GROUP BY `u`.`user_id`, `u`.`username` ORDER BY sum(`gs`.`score`) DESC ;
 
 --
 -- Indexes for dumped tables
@@ -172,7 +151,6 @@ ALTER TABLE `quiz_questions`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
