@@ -133,64 +133,64 @@
       // Original flashcard data
       const originalFlashcards = [
         {
-          question: "What does the root word \"cardi/o\" refer to?",
-          answer: "Heart"
+            question: "A patient with celiac disease should avoid which type of food?",
+            answer: "Gluten-containing grains"
         },
         {
-          question: "What does the suffix \"-ectomy\" mean?",
-          answer: "Surgical removal"
+            question: "What is the primary goal of nutrition therapy in diabetes management?",
+            answer: "Control blood glucose levels"
         },
         {
-          question: "What does the prefix \"hypo-\" mean?",
-          answer: "Below normal"
+            question: "What is a sign of protein-energy malnutrition?",
+            answer: "Edema"
         },
         {
-          question: "What is the meaning of the suffix \"-pathy\"?",
-          answer: "Disease"
+            question: "What is the Body Mass Index (BMI) range for normal weight?",
+            answer: "18.5–24.9"
         },
         {
-          question: "What does the prefix \"brady-\" mean?",
-          answer: "Slow"
+            question: "What vitamin is crucial for preventing neural tube defects during pregnancy?",
+            answer: "Folate (Folic Acid)"
         },
         {
-          question: "What does the root word \"dermat/o\" refer to?",
-          answer: "Skin"
+            question: "What type of fat is considered the healthiest for heart health?",
+            answer: "Unsaturated fat"
         },
         {
-          question: "What does the root word \"nephr/o\" refer to?",
-          answer: "Kidney"
+            question: "Which vitamin is essential for blood clotting?",
+            answer: "Vitamin K"
         },
         {
-          question: "What does the suffix \"-osis\" mean?",
-          answer: "Condition or disease"
+            question: "What condition is caused by a deficiency of iodine?",
+            answer: "Goiter"
         },
         {
-          question: "What does the prefix \"sub-\" mean?",
-          answer: "Below"
+            question: "Which nutrient helps maintain fluid and electrolyte balance in the body?",
+            answer: "Sodium"
         },
         {
-          question: "What does the suffix \"-graphy\" mean?",
-          answer: "Process of recording"
+            question: "What is the primary function of dietary fiber?",
+            answer: "To aid digestion and promote bowel regularity"
         },
         {
-          question: "What does the suffix \"-algia\" mean?",
-          answer: "Pain"
+            question: "Which macronutrient helps regulate body temperature and cushions organs?",
+            answer: "Fat"
         },
         {
-          question: "What does the prefix \"hyper-\" mean?",
-          answer: "Excessive or above normal"
+            question: "What is the recommended daily water intake for an average adult?",
+            answer: "About 8 glasses or 2 liters"
         },
         {
-          question: "What does \"cyanosis\" refer to?",
-          answer: "Bluish discoloration of the skin"
+            question: "Which vitamin is essential for vision and immune function?",
+            answer: "Vitamin A"
         },
         {
-          question: "What does the term \"necrosis\" refer to?",
-          answer: "Death of body tissue"
+            question: "What mineral is important for healthy teeth and bones, along with calcium?",
+            answer: "Phosphorus"
         },
         {
-          question: "What is the meaning of the suffix \"-itis\" in medical terms?",
-          answer: "Inflammation"
+            question: "Which vitamin deficiency can lead to night blindness?",
+            answer: "Vitamin A"
         }
             ];
 
@@ -343,7 +343,7 @@
       
       // Finish button click handler
       finishBtn.addEventListener('click', function() {
-        window.location.href = '../Homepage.php';
+        window.location.href = '../FlashcardSub.php';
       });
       
       // Event listeners

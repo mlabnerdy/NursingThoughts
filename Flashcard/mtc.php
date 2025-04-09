@@ -133,64 +133,64 @@
       // Original flashcard data
       const originalFlashcards = [
         {
-          question: "What does the root word \"cardi/o\" refer to?",
-          answer: "Heart"
+            question: "Normal fetal heart rate range.",
+            answer: "120–160 bpm"
         },
         {
-          question: "What does the suffix \"-ectomy\" mean?",
-          answer: "Surgical removal"
+            question: "Maintains pregnancy by relaxing the uterus and supporting the endometrium.",
+            answer: "Progesterone"
         },
         {
-          question: "What does the prefix \"hypo-\" mean?",
-          answer: "Below normal"
+            question: "A probable sign of pregnancy.",
+            answer: "Positive pregnancy test"
         },
         {
-          question: "What is the meaning of the suffix \"-pathy\"?",
-          answer: "Disease"
+            question: "\"Gravida\" refers to total pregnancies regardless of outcome.",
+            answer: "Number of pregnancies"
         },
         {
-          question: "What does the prefix \"brady-\" mean?",
-          answer: "Slow"
+            question: "A 2-year-old child is in which stage according to Erikson's theory?",
+            answer: "Autonomy vs. Shame and Doubt"
         },
         {
-          question: "What does the root word \"dermat/o\" refer to?",
-          answer: "Skin"
+            question: "The first permanent teeth to erupt are usually:",
+            answer: "Molars"
         },
         {
-          question: "What does the root word \"nephr/o\" refer to?",
-          answer: "Kidney"
+            question: "A common sign of epiglottitis is:",
+            answer: "Drooling"
         },
         {
-          question: "What does the suffix \"-osis\" mean?",
-          answer: "Condition or disease"
+            question: "What is the main concern when a child has a febrile seizure?",
+            answer: "Underlying infection"
         },
         {
-          question: "What does the prefix \"sub-\" mean?",
-          answer: "Below"
+            question: "A 4-year-old child is brought in with barking cough and stridor. What is the most likely diagnosis?",
+            answer: "Croup"
         },
         {
-          question: "What does the suffix \"-graphy\" mean?",
-          answer: "Process of recording"
+            question: "A common cause of diarrhea in children under 5 is:",
+            answer: "Rotavirus"
         },
         {
-          question: "What does the suffix \"-algia\" mean?",
-          answer: "Pain"
+            question: "What is the normal temperature range for a child?",
+            answer: "36.5°C to 37.5°C"
         },
         {
-          question: "What does the prefix \"hyper-\" mean?",
-          answer: "Excessive or above normal"
+            question: "What is the first sign of dehydration in a child?",
+            answer: "Dry mouth and less frequent urination"
         },
         {
-          question: "What does \"cyanosis\" refer to?",
-          answer: "Bluish discoloration of the skin"
+            question: "Responsible for milk ejection reflex.",
+            answer: "Oxytocin"
         },
         {
-          question: "What does the term \"necrosis\" refer to?",
-          answer: "Death of body tissue"
+            question: "Fundal massage frequency to ensure uterine contraction after delivery.",
+            answer: "Every hour for the first 2 hours"
         },
         {
-          question: "What is the meaning of the suffix \"-itis\" in medical terms?",
-          answer: "Inflammation"
+            question: "What is the purpose of Leopold's maneuvers?",
+            answer: "To assess the fetal position and presentation during labor."
         }
             ];
 

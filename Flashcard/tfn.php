@@ -133,64 +133,64 @@
       // Original flashcard data
       const originalFlashcards = [
         {
-          question: "What does the root word \"cardi/o\" refer to?",
-          answer: "Heart"
+          question: "Nursing theory that emphasizes the importance of self-care in maintaining health:",
+          answer: "Self-Care Deficit Theory"
         },
         {
-          question: "What does the suffix \"-ectomy\" mean?",
-          answer: "Surgical removal"
+          question: "Nursing theory that focuses on the relationship between the nurse and the patient, emphasizing trust and caring:",
+          answer: "Transpersonal Caring Theory"
         },
         {
-          question: "What does the prefix \"hypo-\" mean?",
-          answer: "Below normal"
+          question: "The theory that highlights the concept of \"environmental factors,\" such as light, ventilation, and cleanliness, is:",
+          answer: "Nightingale’s Environmental Theory"
         },
         {
-          question: "What is the meaning of the suffix \"-pathy\"?",
-          answer: "Disease"
+          question: "The theorist who proposed the Adaptation Model in nursing is:",
+          answer: "Roy"
         },
         {
-          question: "What does the prefix \"brady-\" mean?",
-          answer: "Slow"
+          question: "The Theory of Human Caring, which emphasizes the human aspects of nursing, was developed by:",
+          answer: "Hildegard Peplau"
         },
         {
-          question: "What does the root word \"dermat/o\" refer to?",
-          answer: "Skin"
+          question: "Who developed the Theory of Human Needs, which focuses on patient needs as the foundation for nursing care?",
+          answer: "Jean Watson"
         },
         {
-          question: "What does the root word \"nephr/o\" refer to?",
-          answer: "Kidney"
+          question: "According to Orem’s Self-Care Deficit Theory, nursing care is needed when:",
+          answer: "A person cannot meet their own self-care needs"
         },
         {
-          question: "What does the suffix \"-osis\" mean?",
-          answer: "Condition or disease"
+          question: "The Roy Adaptation Model focuses on:",
+          answer: "The nurse’s role in supporting the patient’s adaptation to stress"
         },
         {
-          question: "What does the prefix \"sub-\" mean?",
-          answer: "Below"
+          question: "In Peplau’s Interpersonal Relations Theory, the nurse-patient relationship is viewed as:",
+          answer: "A collaborative process"
         },
         {
-          question: "What does the suffix \"-graphy\" mean?",
-          answer: "Process of recording"
+          question: "Martha Rogers' Science of Unitary Human Beings emphasizes:",
+          answer: "The interrelationship between the individual and the environment"
         },
         {
-          question: "What does the suffix \"-algia\" mean?",
-          answer: "Pain"
+          question: "Who is considered the founder of modern nursing theory and emphasized the importance of the environment in the healing process?",
+          answer: "Florence Nightingale"
         },
         {
-          question: "What does the prefix \"hyper-\" mean?",
-          answer: "Excessive or above normal"
+          question: "Which nursing theory focuses on the relationship between the nurse, patient, and the environment, aiming to achieve health and wellness through care and interaction?",
+          answer: "The Interpersonal Relations Theory by Hildegard Peplau"
         },
         {
-          question: "What does \"cyanosis\" refer to?",
-          answer: "Bluish discoloration of the skin"
+          question: "What is the primary focus of Dorothea Orem's Self-Care Deficit Theory?",
+          answer: "The theory focuses on the individual's ability to perform self-care and the need for nursing care when self-care abilities are inadequate"
         },
         {
-          question: "What does the term \"necrosis\" refer to?",
-          answer: "Death of body tissue"
+          question: "According to the Roy Adaptation Model, what are the four adaptive modes that individuals use to adapt to changes in their environment?",
+          answer: "Physiological, self-concept, role function, and interdependence"
         },
         {
-          question: "What is the meaning of the suffix \"-itis\" in medical terms?",
-          answer: "Inflammation"
+          question: "In Jean Watson's Theory of Human Caring, what is considered the most important factor for promoting healing and wellness in patients?",
+          answer: "The caring relationship between the nurse and the patient, which promotes health and healing"
         }
             ];
 
