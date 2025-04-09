@@ -1,6 +1,46 @@
 <?php
 session_start();
-// Include database connection if needed here
+
+// Include the database connection
+include('db_conn.php'); // Ensure this file has your PDO database connection setup
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the email and password from the POST request
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prepare the SQL query to find the user by email
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    // Check if a user with this email exists
+    if ($stmt->rowCount() > 0) {
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Verify the password with the stored hash in the database
+        if (password_verify($password, $user['password_hash'])) {
+            // Password is correct, set session variables
+            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['full_name'] = $user['fullName'];
+            $_SESSION['email'] = $user['email'];
+            
+            // Redirect to the home/dashboard page
+            header("Location: dashboard.php"); // Change this to your desired page
+            exit();
+        } else {
+            // Invalid password
+            $_SESSION['error_message'] = "Incorrect password. Please try again.";
+            header("Location: login.php"); // Redirect back to the login page
+            exit();
+        }
+    } else {
+        // No user found with this email
+        $_SESSION['error_message'] = "No account found with this email.";
+        header("Location: login.php"); // Redirect back to the login page
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +52,7 @@ session_start();
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="login.css"> <!-- make sure the filename matches your actual CSS file -->
+  <link rel="stylesheet" href="login.css"> <!-- Ensure the CSS file exists and matches the filename -->
 </head>
 <body>
 
@@ -24,8 +64,16 @@ session_start();
 
 <!-- Login Form Container -->
 <div class="login-container">
-  <form class="login-box shadow-lg rounded" method="POST" action="login_process.php">
+  <form class="login-box shadow-lg rounded" method="POST" action="login.php"> <!-- Action is now pointing to login.php -->
     <h2 class="text-center fw-bold">LOGIN</h2>
+
+    <?php
+    // Display error message if there is any
+    if (isset($_SESSION['error_message'])) {
+        echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+        unset($_SESSION['error_message']); // Clear the error message after displaying it
+    }
+    ?>
 
     <div class="form-group mb-3">
       <input type="email" name="email" class="form-control" placeholder="email" required>

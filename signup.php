@@ -1,5 +1,4 @@
-<?php  
-// signup.php
+<?php
 session_start();
 ?>
 
@@ -23,6 +22,16 @@ session_start();
   <div class="form-outer">
     <div class="form-container">
       <form action="process_signup.php" method="POST" onsubmit="return validateForm();">
+
+        <!-- ✅ SESSION MESSAGE HANDLER -->
+        <?php if (isset($_SESSION['error'])): ?>
+          <div class="error-message"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['success'])): ?>
+          <div class="success-message"><?= $_SESSION['success']; unset($_SESSION['success']); ?></div>
+        <?php endif; ?>
+
         <h2>WELCOME!</h2>
 
         <label>Full Name <span>*</span></label>
@@ -56,6 +65,25 @@ session_start();
     </div>
   </div>
 
-  <script src="signup.js"></script>
+  <!-- ✅ JS VALIDATION -->
+  <script>
+    function validateForm() {
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm_password").value;
+
+      const existingError = document.querySelector(".error-message");
+      if (existingError) existingError.remove(); // remove old error if any
+
+      if (password !== confirm) {
+        const msg = document.createElement("div");
+        msg.className = "error-message";
+        msg.innerText = "Passwords do not match!";
+        document.querySelector("form").prepend(msg);
+        return false;
+      }
+      return true;
+    }
+  </script>
+
 </body>
 </html>
