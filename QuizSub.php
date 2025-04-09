@@ -31,18 +31,17 @@
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-10">
         <div class="subject-grid">
-          <a href="rabe-url.html"><button class="subject-btn">RABE</button></a>
-          <a href="fundamentals-in-nursing-url.html"><button class="subject-btn">Fundamentals in Nursing</button></a>
-          <a href="bio-ethics-url.html"><button class="subject-btn">Bio-Ethics</button></a>
-          <a href="osce-url.html"><button class="subject-btn">OSCE</button></a>
-          <a href="pharmacology-url.html"><button class="subject-btn">Pharmacology</button></a>
-          <a href="medical-terminologies-url.html"><button class="subject-btn">Medical Terminologies</button></a>
-          <a href="anatomy-and-physiology-url.html"><button class="subject-btn">Anatomy and Physiology</button></a>
-          <a href="maternal-and-child-url.html"><button class="subject-btn">Maternal and Child</button></a>
-          <a href="medical-tools-and-equipments-url.html"><button class="subject-btn">Medical tools and equipments</button></a>
-          <a href="community-health-nursing-url.html"><button class="subject-btn">Community Health Nursing</button></a>
-          <a href="health-assessment-url.html"><button class="subject-btn">Health Assessment</button></a>
-          <a href="theoretical-foundation-of-nursing-url.html"><button class="subject-btn">Theoretical Foundation of Nursing</button></a>
+        <a href="Quiz/RABE.php"><button class="subject-btn">RABE</button></a>
+          <a href="Flashcard/fin.php"><button class="subject-btn">Fundamentals in Nursing</button></a>
+          <a href="Flashcard/be.php"><button class="subject-btn">Bio-Ethics</button></a>
+          <a href="Flashcard/ndt.php"><button class="subject-btn">Nutrition and Diet Therapy</button></a>
+          <a href="Flashcard/pharma.php"><button class="subject-btn">Pharmacology</button></a>
+          <a href="FLashcard/mt.php"><button class="subject-btn">Medical Terminologies</button></a>
+          <a href="Flashcard/anp.php"><button class="subject-btn">Anatomy and Physiology</button></a>
+          <a href="Flashcard/mtc.php"><button class="subject-btn">Maternal and Child</button></a>
+          <a href="Flashcard/chn.php"><button class="subject-btn">Community Health Nursing</button></a>
+          <a href="Flashcard/ha.php"><button class="subject-btn">Health Assessment</button></a>
+          <a href="Flashcard/tfn.php"><button class="subject-btn">Theoretical Foundation of Nursing</button></a>
         </div>
       </div>
     </div>
