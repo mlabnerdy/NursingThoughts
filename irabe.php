@@ -33,14 +33,12 @@ session_start();
   <div class="main-content position-relative">
     <a href="Categories.php" class="btn btn-back">Back</a>
     <div class="quiz-container">
-      <h1>QUIZ GAME</h1>
+      <h1>FLASHCARDS</h1>
       <div class="quiz-description">
-        <p><strong>Welcome to Nursing Thoughts Quiz Game</strong></p>
+        <p><strong>Welcome to Nursing Thoughts Flashcard Game</strong></p>
         <p>
-          An interactive platform designed to enrich your understanding of nursing concepts
-          through a structured multiple-choice format. Simply click the "Start" button to
-          begin your journey. Carefully select the best answers, track your progress in
-          real-time, and receive immediate feedback upon completion.
+        Flashcards offer a quick, interactive way to reinforce nursing concepts through active recall. 
+        Review key terms and definitions at your own pace, enhancing retention and exam preparation.
         </p>
       </div>
       <button class="btn-start">Start</button>

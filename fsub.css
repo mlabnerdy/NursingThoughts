@@ -1,0 +1,60 @@
+.main-content {
+    min-height: calc(100vh - 112px);
+    background-color: #f8f9fa;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px; /* Added to ensure space between title and buttons */
+  }
+  
+  .subject-btn {
+    padding: 25px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: white;
+    border: 3px solid #f57c00;
+    border-radius: 10px;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Fixed height for uniformity */
+    width: 100%; /* Ensure the width fits the grid */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Center text if needed */
+  }
+  
+  .subject-btn:hover {
+    background-color: #f57c00;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #333;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #f57c00;
+    border-radius: 2px;
+  }
+      

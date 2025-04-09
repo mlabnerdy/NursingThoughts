@@ -1,14 +1,18 @@
 body {
     background-color: #eeeeee;
     font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
     margin: 0;
+  }
+  
+  .main-content {
+    min-height: calc(100vh - 112px); 
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
     position: relative;
   }
-
+  
   .quiz-container {
     max-width: 600px;
     padding: 30px;
