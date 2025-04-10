@@ -12,34 +12,53 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        body {
+            background-color:rgb(231, 215, 194);
+        }
         .profile-section {
             padding: 20px;
-            background: #f8f9fa;
+            background: #fff;
             border-radius: 10px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .scores-card {
             height: 600px;
             overflow-y: auto;
         }
         .accordion-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
         .accordion-button .badge {
             margin-left: 10px;
         }
-
         .scores-card {
             height: 600px;
             overflow-y: auto;
         }
-
         .list-group-item {
             border: none;
             padding: 0.5rem 1rem;
+        }
+        /* Color scheme */
+        .btn-orange {
+            background-color: #f39c12;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #e67e22;
+        }
+        .accordion-button.collapsed {
+            background-color: #f39c12;
+            color: white;
+        }
+        .accordion-button.collapsed:hover {
+            background-color: #e67e22;
+        }
+        .accordion-body {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
@@ -68,121 +87,116 @@ session_start();
                     <canvas id="performanceChart"></canvas>
                 </div>
             </div>
-<!-- Scores Section -->
-<div class="col-md-4">
-    <div class="card scores-card">
-        <div class="card-header">
-            <h3>Subject Scores</h3>
-        </div>
-        <div class="card-body">
-            <div class="accordion" id="subjectAccordion">
-                <!-- Anatomy -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="anatomyHeading">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#anatomyCollapse">
-                            Anatomy
-                            <span class="badge bg-primary ms-auto">95</span>
-                        </button>
-                    </h2>
-                    <div id="anatomyCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
-                        <div class="accordion-body">
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Quiz Game</span>
-                                    <span class="badge bg-info">98/100</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Flashcard</span>
-                                    <span class="badge bg-info">92/100</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Guess the Photo</span>
-                                    <span class="badge bg-info">95/100</span>
-                                </li>
-                            </ul>
+            
+            <!-- Scores Section -->
+            <div class="col-md-4">
+                <div class="card scores-card">
+                    <div class="card-header">
+                        <h3>Subject Scores</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="subjectAccordion">
+                            <!-- Nutrition and Diet Therapy -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nutritionHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nutritionCollapse">
+                                        Nutrition and Diet Therapy
+                                        <span class="badge bg-primary ms-auto">85</span>
+                                    </button>
+                                </h2>
+                                <div id="nutritionCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Quiz Game</span>
+                                                <span class="badge bg-info">90/100</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Flashcard</span>
+                                                <span class="badge bg-info">80/100</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Anatomy and Physiology -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="anatomyHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#anatomyCollapse">
+                                        Anatomy and Physiology
+                                        <span class="badge bg-primary ms-auto">92</span>
+                                    </button>
+                                </h2>
+                                <div id="anatomyCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Quiz Game</span>
+                                                <span class="badge bg-info">95/100</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Flashcard</span>
+                                                <span class="badge bg-info">90/100</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more subjects in similar fashion -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Physiology -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="physiologyHeading">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#physiologyCollapse">
-                            Physiology
-                            <span class="badge bg-primary ms-auto">88</span>
-                        </button>
-                    </h2>
-                    <div id="physiologyCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
-                        <div class="accordion-body">
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Quiz Game</span>
-                                    <span class="badge bg-info">85/100</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Flashcard</span>
-                                    <span class="badge bg-info">90/100</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Guess the Photo</span>
-                                    <span class="badge bg-info">89/100</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more subjects following the same pattern -->
-
             </div>
         </div>
     </div>
-</div>
 
     <script>
-    // Sample data for the pie chart
-const data = {
-    labels: [
-        'Quiz Game',
-        'Flashcard',
-        'Guess the Photo'
-    ],
-    datasets: [{
-        data: [
-            // Average scores for each category across all subjects
-            90, // Quiz Game average
-            85, // Flashcard average
-            88  // Guess the Photo average
-        ],
-        backgroundColor: [
-            '#FF6384',
-            '#36A2EB',
-            '#FFCE56'
-        ]
-    }]
-};
+        // Data for the performance pie chart
+        const data = {
+            labels: [
+                'Nutrition and Diet Therapy',
+                'Anatomy and Physiology',
+                'Community Health Nursing',
+                'Fundamentals of Nursing',
+                'Pharmacology',
+                'Maternal and Child Nursing',
+                'Health Assessment',
+                'Bio-Ethics',
+                'Medical Terminologies',
+                'RABE',
+                'Theoretical Foundation of Nursing'
+                'Medical tools and Equipment'
+            ],
+            datasets: [{
+                data: [85, 92, 78, 80, 89, 91, 86, 75, 88, 83, 77], // Sample performance data for each subject
+                backgroundColor: [
+                    '#FF5733', '#FF8D1A', '#FFC300', '#FFB400', '#FF6F00', '#D35400',
+                    '#F39C12', '#E67E22', '#F39C12', '#F0A500', '#F39C12'
+                ]
+            }]
+        };
 
-// Create the pie chart
-const ctx = document.getElementById('performanceChart').getContext('2d');
-new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'right'
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        return `${context.label}: ${context.raw}%`;
+        // Create the pie chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
-});
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
