@@ -49,7 +49,7 @@ session_start();
 </div>
 
 <!-- Faces Behind Section -->
-<div class="container py-5 text-white">
+<div id="aboutUs" class="container py-5 text-white">
   <h2 class="text-center fw-bold mb-4">THE FACES BEHIND</h2>
   <div class="row g-4 justify-content-center">
 

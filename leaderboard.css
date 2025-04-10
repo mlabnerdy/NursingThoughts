@@ -1,0 +1,55 @@
+.leaderboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.leaderboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f9943b;
+  margin-bottom: 30px;
+}
+
+.leaderboard-table {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-table th {
+  background-color: #FFB76B;
+  color: rgb(22, 21, 21);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.leaderboard-table td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+  background-color: #fff1e0;
+}
+
+.leaderboard-table tbody tr:nth-child(odd) {
+  background-color: #ffe0c2;
+}
+
+.rank-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.rank-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
