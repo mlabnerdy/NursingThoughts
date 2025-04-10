@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
+// Now include the DB connection
+require '../db_conn.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,12 +55,19 @@
     <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
-        <a class="nav-link active" href="../Homepage.php">Home</a>
-        <a class="nav-link" href="../Games.php">Games</a>
-        <a class="nav-link" href="../Leaderboard.php">Leaderboard</a>
+        <a class="nav-link" href="Homepage.php">Home</a>
+        <a class="nav-link active" href="Games.php">Games</a>
+        <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
       </div>
-      <div class="nav-profile">
-        <i class="bi bi-person-fill"></i>
+      <div class="dropdown">
+        <div class="nav-profile dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="profile.php"><i class="bi bi-person me-2"></i>Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+        </ul>
       </div>
     </nav>
 

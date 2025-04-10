@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Now include the DB connection
+require 'db_conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +24,23 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
+       <!-- Navbar -->
+       <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
         <a class="nav-link" href="Homepage.php">Home</a>
         <a class="nav-link active" href="Games.php">Games</a>
         <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
       </div>
-      <div class="nav-profile">
-        <i class="bi bi-person-fill"></i>
+      <div class="dropdown">
+        <div class="nav-profile dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="profile.php"><i class="bi bi-person me-2"></i>Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+        </ul>
       </div>
     </nav>
     
@@ -31,18 +51,17 @@
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-10">
         <div class="subject-grid">
-          <a href="rabe-url.html"><button class="subject-btn">RABE</button></a>
-          <a href="fundamentals-in-nursing-url.html"><button class="subject-btn">Fundamentals in Nursing</button></a>
-          <a href="bio-ethics-url.html"><button class="subject-btn">Bio-Ethics</button></a>
-          <a href="osce-url.html"><button class="subject-btn">OSCE</button></a>
-          <a href="pharmacology-url.html"><button class="subject-btn">Pharmacology</button></a>
-          <a href="medical-terminologies-url.html"><button class="subject-btn">Medical Terminologies</button></a>
-          <a href="anatomy-and-physiology-url.html"><button class="subject-btn">Anatomy and Physiology</button></a>
-          <a href="maternal-and-child-url.html"><button class="subject-btn">Maternal and Child</button></a>
-          <a href="medical-tools-and-equipments-url.html"><button class="subject-btn">Medical tools and equipments</button></a>
-          <a href="community-health-nursing-url.html"><button class="subject-btn">Community Health Nursing</button></a>
-          <a href="health-assessment-url.html"><button class="subject-btn">Health Assessment</button></a>
-          <a href="theoretical-foundation-of-nursing-url.html"><button class="subject-btn">Theoretical Foundation of Nursing</button></a>
+        <a href="Quiz/RABE.php"><button class="subject-btn">RABE</button></a>
+          <a href="Flashcard/fin.php"><button class="subject-btn">Fundamentals in Nursing</button></a>
+          <a href="Flashcard/be.php"><button class="subject-btn">Bio-Ethics</button></a>
+          <a href="Flashcard/ndt.php"><button class="subject-btn">Nutrition and Diet Therapy</button></a>
+          <a href="Flashcard/pharma.php"><button class="subject-btn">Pharmacology</button></a>
+          <a href="FLashcard/mt.php"><button class="subject-btn">Medical Terminologies</button></a>
+          <a href="Flashcard/anp.php"><button class="subject-btn">Anatomy and Physiology</button></a>
+          <a href="Flashcard/mtc.php"><button class="subject-btn">Maternal and Child</button></a>
+          <a href="Flashcard/chn.php"><button class="subject-btn">Community Health Nursing</button></a>
+          <a href="Flashcard/ha.php"><button class="subject-btn">Health Assessment</button></a>
+          <a href="Flashcard/tfn.php"><button class="subject-btn">Theoretical Foundation of Nursing</button></a>
         </div>
       </div>
     </div>
