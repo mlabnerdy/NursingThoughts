@@ -1,41 +1,49 @@
 <?php
-// save_score.php
+session_start();
+require '../db_conn.php'; // Include your database connection
 
-// Enable CORS if needed
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-header("Access-Control-Allow-Methods: POST");
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-// Get the posted JSON data
-$data = json_decode(file_get_contents("php://input"), true);
-
-$userId = $data['user_id'];
-$subjectId = $data['subject_id'];
-$score = $data['score'];
-
-// Database connection
-$host = 'localhost';
-$dbname = 'nursingthoughts';
-$username = 'root';
-$password = ''; // your actual password
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-// Check connection
-if ($conn->connect_error) {
-  die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'User not logged in']);
+    exit();
 }
 
-// Insert into the scores table
-$stmt = $conn->prepare("INSERT INTO scores (user_id, subject_id, score) VALUES (?, ?, ?)");
-$stmt->bind_param("iii", $userId, $subjectId, $score);
+// Get the user ID, subject ID, and score from the POST request
+$user_id = $_SESSION['user_id']; // Assuming the user ID is stored in session
+$subject_id = isset($_POST['subject_id']) ? (int)$_POST['subject_id'] : 0; // Ensure subject_id is an integer
+$score = isset($_POST['score']) ? (float)$_POST['score'] : 0; // Ensure score is a valid number
 
-if ($stmt->execute()) {
-  echo json_encode(["success" => true, "message" => "Score saved"]);
+// Validate input
+if ($subject_id <= 0 || $score <= 0) {
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'Invalid input for subject_id or score']);
+    exit();
+}
+
+// Check if the subject ID exists in the database
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM subjects WHERE subject_id = ?");
+$stmt->execute([$subject_id]);
+if ($stmt->fetchColumn() == 0) {
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'Invalid subject ID']);
+    exit();
+}
+
+// Insert the score into the scores table
+$query = "INSERT INTO scores (user_id, subject_id, score) VALUES (?, ?, ?)";
+$stmt = $pdo->prepare($query);
+
+// Execute the query and handle errors
+if ($stmt->execute([$user_id, $subject_id, $score])) {
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success', 'message' => 'Score saved successfully']);
 } else {
-  echo json_encode(["success" => false, "error" => $stmt->error]);
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'Error saving score']);
 }
-
-$stmt->close();
-$conn->close();
 ?>
