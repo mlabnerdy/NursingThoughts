@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2025 at 05:03 PM
+-- Generation Time: Apr 10, 2025 at 07:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,90 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
---
-
-CREATE TABLE `categories` (
-  `category_id` int(11) NOT NULL,
-  `name` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`category_id`, `name`) VALUES
-(2, 'Guess the Photo'),
-(1, 'Quiz Game');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `guess_the_photo_questions`
---
-
-CREATE TABLE `guess_the_photo_questions` (
-  `photo_question_id` int(11) NOT NULL,
-  `image_url` varchar(255) DEFAULT NULL,
-  `correct_answer` varchar(255) DEFAULT NULL,
-  `choice_a` varchar(255) DEFAULT NULL,
-  `choice_b` varchar(255) DEFAULT NULL,
-  `choice_c` varchar(255) DEFAULT NULL,
-  `choice_d` varchar(255) DEFAULT NULL,
-  `subject_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `leaderboards`
---
-
-CREATE TABLE `leaderboards` (
-  `leaderboard_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `total_score` int(11) DEFAULT 0,
-  `last_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questions`
---
-
-CREATE TABLE `questions` (
-  `question_id` int(11) NOT NULL,
-  `question_text` text DEFAULT NULL,
-  `correct_answer` varchar(255) DEFAULT NULL,
-  `choice_a` varchar(255) DEFAULT NULL,
-  `choice_b` varchar(255) DEFAULT NULL,
-  `choice_c` varchar(255) DEFAULT NULL,
-  `choice_d` varchar(255) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `subject_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quiz_game_questions`
---
-
-CREATE TABLE `quiz_game_questions` (
-  `quiz_question_id` int(11) NOT NULL,
-  `question_text` text DEFAULT NULL,
-  `correct_answer` varchar(255) DEFAULT NULL,
-  `choice_a` varchar(255) DEFAULT NULL,
-  `choice_b` varchar(255) DEFAULT NULL,
-  `choice_c` varchar(255) DEFAULT NULL,
-  `choice_d` varchar(255) DEFAULT NULL,
-  `subject_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `scores`
 --
 
@@ -115,9 +31,7 @@ CREATE TABLE `scores` (
   `score_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `subject_id` int(11) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `score` int(11) DEFAULT NULL,
-  `date_taken` datetime DEFAULT current_timestamp()
+  `score` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -130,6 +44,23 @@ CREATE TABLE `subjects` (
   `subject_id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`subject_id`, `name`) VALUES
+(7, 'Anatomy and Physiology'),
+(3, 'Bio-Ethics'),
+(9, 'Community Health Nursing'),
+(2, 'Fundamentals in Nursing'),
+(10, 'Health Assessment'),
+(8, 'Maternal and Child'),
+(6, 'Medical Terminologies'),
+(4, 'Nutrition and Diet Therapy'),
+(5, 'Pharmacology'),
+(1, 'RABE'),
+(11, 'Theoretical Foundation of Nursing');
 
 -- --------------------------------------------------------
 
@@ -151,49 +82,12 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category_id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `guess_the_photo_questions`
---
-ALTER TABLE `guess_the_photo_questions`
-  ADD PRIMARY KEY (`photo_question_id`),
-  ADD KEY `subject_id` (`subject_id`);
-
---
--- Indexes for table `leaderboards`
---
-ALTER TABLE `leaderboards`
-  ADD PRIMARY KEY (`leaderboard_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `questions`
---
-ALTER TABLE `questions`
-  ADD PRIMARY KEY (`question_id`),
-  ADD KEY `category_id` (`category_id`),
-  ADD KEY `subject_id` (`subject_id`);
-
---
--- Indexes for table `quiz_game_questions`
---
-ALTER TABLE `quiz_game_questions`
-  ADD PRIMARY KEY (`quiz_question_id`),
-  ADD KEY `subject_id` (`subject_id`);
-
---
 -- Indexes for table `scores`
 --
 ALTER TABLE `scores`
   ADD PRIMARY KEY (`score_id`),
   ADD KEY `user_id` (`user_id`),
-  ADD KEY `subject_id` (`subject_id`),
-  ADD KEY `category_id` (`category_id`);
+  ADD KEY `subject_id` (`subject_id`);
 
 --
 -- Indexes for table `subjects`
@@ -214,36 +108,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `guess_the_photo_questions`
---
-ALTER TABLE `guess_the_photo_questions`
-  MODIFY `photo_question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `leaderboards`
---
-ALTER TABLE `leaderboards`
-  MODIFY `leaderboard_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `questions`
---
-ALTER TABLE `questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `quiz_game_questions`
---
-ALTER TABLE `quiz_game_questions`
-  MODIFY `quiz_question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
@@ -253,7 +117,7 @@ ALTER TABLE `scores`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -266,37 +130,11 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `guess_the_photo_questions`
---
-ALTER TABLE `guess_the_photo_questions`
-  ADD CONSTRAINT `guess_the_photo_questions_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
-
---
--- Constraints for table `leaderboards`
---
-ALTER TABLE `leaderboards`
-  ADD CONSTRAINT `leaderboards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `questions`
---
-ALTER TABLE `questions`
-  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`),
-  ADD CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
-
---
--- Constraints for table `quiz_game_questions`
---
-ALTER TABLE `quiz_game_questions`
-  ADD CONSTRAINT `quiz_game_questions_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
-
---
 -- Constraints for table `scores`
 --
 ALTER TABLE `scores`
   ADD CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `scores_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`),
-  ADD CONSTRAINT `scores_ibfk_3` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
+  ADD CONSTRAINT `scores_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
