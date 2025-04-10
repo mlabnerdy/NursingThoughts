@@ -1,3 +1,32 @@
+<?php
+require '../db_conn.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_score'])) {
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  $userId = $data['user_id'] ?? null;
+  $subjectId = $data['subject_id'] ?? null;
+  $score = $data['score'] ?? null;
+
+  if ($userId && $subjectId && $score !== null) {
+    $stmt = $conn->prepare("INSERT INTO scores (user_id, subject_id, score) VALUES (?, ?, ?)");
+    $stmt->bind_param("iii", $userId, $subjectId, $score);
+
+    if ($stmt->execute()) {
+      echo json_encode(["success" => true, "message" => "Score saved"]);
+    } else {
+      echo json_encode(["success" => false, "error" => $stmt->error]);
+    }
+
+    $stmt->close();
+    $conn->close();
+  } else {
+    echo json_encode(["success" => false, "error" => "Invalid input data"]);
+  }
+  exit; // Prevent the rest of the page from rendering
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -494,24 +523,29 @@
     });
 
     function saveScore(userId, subjectId, score) {
-    fetch('save_score.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ user_id: userId, subject_id: subjectId, score: score })
+  fetch(window.location.href, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      save_score: true,
+      user_id: userId,
+      subject_id: subjectId,
+      score: score
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            console.log('Score saved successfully');
-        } else {
-            console.log('Failed to save score');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      console.log("Score saved successfully!");
+    } else {
+      console.error("Failed to save score:", data.error);
+    }
+  })
+  .catch(error => {
+    console.error("Fetch error:", error);
+  });
 }
   </script>
 </body>

@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Now include the DB connection
+require 'db_conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +19,8 @@ session_start();
   <title>Nursing Thoughts</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="nav.css" />
 </head>
 <body>
@@ -22,8 +33,15 @@ session_start();
         <a class="nav-link" href="Games.php">Games</a>
         <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
       </div>
-      <div class="nav-profile">
-        <i class="bi bi-person-fill"></i>
+      <div class="dropdown">
+        <div class="nav-profile dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="profile.php"><i class="bi bi-person me-2"></i>Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+        </ul>
       </div>
     </nav>
 
@@ -40,6 +58,7 @@ session_start();
   </div>
 
   <!-- Bootstrap JS -->
+  <!-- Only keep ONE version of Bootstrap JS to avoid conflict -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $user['email'];
             
             // Redirect to the home/dashboard page
-            header("Location: dashboard.php"); // Change this to your desired page
+            header("Location: Homepage.php"); // Change this to your desired page
             exit();
         } else {
             // Invalid password
