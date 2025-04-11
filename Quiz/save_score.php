@@ -21,7 +21,18 @@ $score = isset($_POST['score']) ? (float)$_POST['score'] : 0; // Ensure score is
 // Validate input
 if ($subject_id <= 0 || $score <= 0) {
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'error', 'message' => 'Invalid input for subject_id or score']);
+    //echo json_encode(['status' => 'error', 'message' => 'Invalid input for subject_id or score']);
+    
+echo json_encode([
+    'status' => 'error',
+    'message' => 'Invalid input for subject_id or score',
+    'debug' => [
+        'user_id' => $user_id,
+        'subject_id' => $subject_id,
+        'score' => $score
+    ]
+]);
+    
     exit();
 }
 

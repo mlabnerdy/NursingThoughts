@@ -98,6 +98,8 @@ require '../db_conn.php';
         <div class="completion-buttons">
           <button class="completion-btn restart-btn" id="restartBtn">Try Again</button>
           <button class="completion-btn finish-btn" id="finishBtn">Submit Answer</button>
+          <button class="completion-btn finish-btn" id="returnBtn">Go Back to Games</button>
+
         </div>
       </div>
     </div>
@@ -242,6 +244,7 @@ require '../db_conn.php';
     const finishBtn = document.getElementById('finishBtn');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
+    const returnBtn = document.getElementById('returnBtn');
 
     // Initialize the quiz
     function initQuiz() {
@@ -381,16 +384,30 @@ require '../db_conn.php';
 
         scoreText.textContent = `You scored ${score} out of ${questions.length} (${percentage}%)`;
         completionModal.style.display = 'flex';
+        
+        if (score <= 0) {
+            finishBtn.style.display = 'none';
+            returnBtn.style.display = 'inline-block';
+        } else {
+            finishBtn.style.display = 'inline-block';
+            returnBtn.style.display = 'none';
+        }
     }
 
     // Event listeners
     startBtn.addEventListener('click', initQuiz);
+
+    returnBtn.addEventListener('click', () => {
+        window.location.href = '../Games.php';
+    });
+
 
     submitBtn.addEventListener('click', () => {
         const unanswered = userAnswers.filter(answer => answer === null).length;
 
         if (unanswered > 0) {
             if (confirm(`You have ${unanswered} unanswered questions. Are you sure you want to submit?`)) {
+            //jeffmarker1
                 endQuiz();
             }
         } else {
@@ -415,7 +432,8 @@ require '../db_conn.php';
     });
 
     finishBtn.addEventListener('click', () => {
-        window.location.href = '../Games.php';
+        endQuizSave();
+        //window.location.href = '../Games.php';
     });
 
     // Navigation buttons functionality
@@ -454,7 +472,8 @@ require '../db_conn.php';
     });
 
 // Function to end the quiz, calculate the score, and save it to the database
-function endQuiz() {
+function endQuizSave() {
+    //jeffMarker2
     quizActive = false;
     clearInterval(timer);
 
@@ -469,11 +488,14 @@ function endQuiz() {
     const subjectId = questions[0].subjectID;
 
     // Send the score to the backend to save it in the database
+    
+
     saveScoreToDatabase(score, subjectId);
 }
 
 // Function to save the score to the database
 function saveScoreToDatabase(score) {
+    
     const subjectId = questions[currentQuestionIndex].subjectID; // Get subjectID from the current question
 
     // Create FormData to send score, subject_id, and user_id
@@ -516,7 +538,7 @@ function showScoreSavedPopup() {
 
     // Automatically close the popup and redirect after 3 seconds
     setTimeout(() => {
-        window.location.href = 'Games.php';
+        window.location.href = '../Games.php';
     }, 3000);
 }
 
