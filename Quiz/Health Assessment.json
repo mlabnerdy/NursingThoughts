@@ -1,0 +1,103 @@
+[
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which nutrient is the primary source of energy for the body?",
+      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
+      "answer": 1
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which vitamin is essential for calcium absorption?",
+      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
+      "answer": 2
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which of the following is a complete protein source?",
+      "options": ["Rice", "Beans", "Chicken", "Corn"],
+      "answer": 2
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which mineral is most important in maintaining fluid balance in the body?",
+      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
+      "answer": 2
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "What is the recommended dietary approach for managing hypertension?",
+      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
+      "answer": 1
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which condition results from a severe deficiency of vitamin C?",
+      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
+      "answer": 2
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "What type of fat is considered most heart-healthy?",
+      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
+      "answer": 2
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
+      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
+      "answer": 1
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "Which nutrient is most important for wound healing?",
+      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
+      "answer": 3
+    },
+    {
+      "subjectID": 10,
+      "type": "mcq",
+      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
+      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
+      "answer": 1
+    },
+    {
+      "subjectID": 10,
+      "type": "tf",
+      "question": "Protein is the body's primary source of energy.",
+      "answer": false
+    },
+    {
+      "subjectID": 10,
+      "type": "tf",
+      "question": "Vitamin K is essential for proper blood clotting.",
+      "answer": true
+    },
+    {
+      "subjectID": 10,
+      "type": "tf",
+      "question": "Trans fats are considered healthy and should be included in the diet.",
+      "answer": false
+    },
+    {
+      "subjectID": 10,
+      "type": "tf",
+      "question": "Iron is necessary for the formation of red blood cells.",
+      "answer": true
+    },
+    {
+      "subjectID": 10,
+      "type": "tf",
+      "question": "A high-fiber diet can help prevent constipation.",
+      "answer": true
+    }
+  ]
+  

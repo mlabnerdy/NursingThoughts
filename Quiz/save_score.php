@@ -45,16 +45,20 @@ if ($stmt->fetchColumn() == 0) {
     exit();
 }
 
-// Insert the score into the scores table
-$query = "INSERT INTO scores (user_id, subject_id, score) VALUES (?, ?, ?)";
+// Insert or update the score if the user-subject pair already exists
+$query = "
+    INSERT INTO scores (user_id, subject_id, score)
+    VALUES (?, ?, ?)
+    ON DUPLICATE KEY UPDATE score = VALUES(score)
+";
 $stmt = $pdo->prepare($query);
 
-// Execute the query and handle errors
 if ($stmt->execute([$user_id, $subject_id, $score])) {
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'success', 'message' => 'Score saved successfully']);
+    echo json_encode(['status' => 'success', 'message' => 'Score saved/updated successfully']);
 } else {
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'error', 'message' => 'Error saving score']);
+    echo json_encode(['status' => 'error', 'message' => 'Failed to save or update score']);
 }
+
 ?>

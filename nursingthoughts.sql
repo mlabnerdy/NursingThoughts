@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 10, 2025 at 07:27 AM
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 12, 2025 at 04:50 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -86,6 +86,7 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `scores`
   ADD PRIMARY KEY (`score_id`),
+  ADD UNIQUE KEY `unique_user_subject` (`user_id`,`subject_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `subject_id` (`subject_id`);
 
@@ -111,7 +112,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `subjects`
@@ -123,7 +124,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

@@ -58,6 +58,9 @@ require '../db_conn.php';
       </div>
     </div>
 
+
+
+
 <!-- Quiz Container -->
 <div class="quiz-container" id="quizContainer">
   <h1 class="quiz-title">
@@ -74,9 +77,14 @@ require '../db_conn.php';
       <div class="true-false-btn" id="trueBtn">True</div>
       <div class="true-false-btn" id="falseBtn">False</div>
     </div>
+    
     <div class="progress-indicator" id="progressIndicator"></div>
-  </div>
+
   
+  </div>
+
+  
+
   <div class="navigation-buttons">
   <button class="nav-btn" id="prevBtn" style="visibility: hidden;">Previous</button>
 <button id="nextBtn" type="button" value="1" class="nav-btn">Next</button>
@@ -86,8 +94,6 @@ require '../db_conn.php';
   
   <button class="submit-btn" id="submitBtn">Submit Answers</button>
 </div>
-
-
 
 
     <!-- Completion Modal -->
@@ -115,110 +121,25 @@ require '../db_conn.php';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
   <script>
-    // Quiz questions in nested array format
-    const questions = [
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which nutrient is the primary source of energy for the body?",
-            options: ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-            answer: 1
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which vitamin is essential for calcium absorption?",
-            options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-            answer: 2
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which of the following is a complete protein source?",
-            options: ["Rice", "Beans", "Chicken", "Corn"],
-            answer: 2
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which mineral is most important in maintaining fluid balance in the body?",
-            options: ["Iron", "Zinc", "Potassium", "Magnesium"],
-            answer: 2
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "What is the recommended dietary approach for managing hypertension?",
-            options: ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-            answer: 1
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which condition results from a severe deficiency of vitamin C?",
-            options: ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-            answer: 2
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "What type of fat is considered most heart-healthy?",
-            options: ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-            answer: 2
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-            options: ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-            answer: 1
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "Which nutrient is most important for wound healing?",
-            options: ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-            answer: 3
-        },
-        {
-            subjectID: 1,
-            type: "mcq",
-            question: "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-            options: ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-            answer: 1
-        },
-        {
-            subjectID: 1,
-            type: "tf",
-            question: "Protein is the body's primary source of energy.",
-            answer: false
-        },
-        {
-            subjectID: 1,
-            type: "tf",
-            question: "Vitamin K is essential for proper blood clotting.",
-            answer: true
-        },
-        {
-            subjectID: 1,
-            type: "tf",
-            question: "Trans fats are considered healthy and should be included in the diet.",
-            answer: false
-        },
-        {
-            subjectID: 1,
-            type: "tf",
-            question: "Iron is necessary for the formation of red blood cells.",
-            answer: true
-        },
-        {
-            subjectID: 1,
-            type: "tf",
-            question: "A high-fiber diet can help prevent constipation.",
-            answer: true
-        }
-    ];
+    const urlParams = new URLSearchParams(window.location.search);
+    const subject = urlParams.get('subject');
 
+    //console.log(subject);
+    if(subject === 'RABE' || subject === 'Fundamentals in Nursing' || subject === 'Bio-Ethics' ||subject === 'Nutrition and Diet Therapy' ||subject === 'Pharmacology' ||subject === 'Medical Terminologies' ||subject === 'Anatomy and Physiology' ||subject === 'Maternal and Child' ||subject === 'Community Health Nursing' ||subject === 'Health Assessment' ||subject === 'Theoretical Foundation of Nursing'){
+        fetch(subject+'.json')
+        .then(response => response.json())
+        .then(question => {
+            window.questions = question;
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
+
+    }
+    else{
+        window.location.href = '../Games.php';
+    }
+        
     // Quiz variables
     let currentQuestionIndex = 0;
     let userAnswers = [];
@@ -248,17 +169,23 @@ require '../db_conn.php';
 
     // Initialize the quiz
     function initQuiz() {
+
+        submitBtn.style.display = 'none';
+
         shuffleArray(questions);
 
         userAnswers = new Array(questions.length).fill(null);
 
         welcomeModal.style.display = 'none';
         quizContainer.style.display = 'flex';
-
+        
         startTimer();
         displayQuestion();
 
         quizActive = true;
+
+
+        
     }
 
     // Display current question
@@ -267,6 +194,8 @@ require '../db_conn.php';
         questionText.textContent = question.question;
 
         progressIndicator.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+        
 
         if (question.type === "mcq") {
             optionsContainer.style.display = "grid";
@@ -301,6 +230,8 @@ require '../db_conn.php';
         }
     }
 
+
+
     function selectOption(index) {
         document.querySelectorAll('.quiz-option').forEach(option => {
             option.classList.remove('selected');
@@ -309,18 +240,56 @@ require '../db_conn.php';
         event.target.classList.add('selected');
 
         userAnswers[currentQuestionIndex] = index;
+
+        console.log(userAnswers);
+
+        if (userAnswers.some(value => value === null)) {
+            console.log("There are unanswered (null) values.");
+            submitBtn.style.display = 'none';
+
+        } else {
+            submitBtn.style.display = 'inline-block';
+
+        }
+
     }
 
     trueBtn.addEventListener('click', () => {
         trueBtn.classList.add('selected');
         falseBtn.classList.remove('selected');
         userAnswers[currentQuestionIndex] = true;
+
+        console.log(userAnswers);
+
+        if (userAnswers.some(value => value === null)) {
+            console.log("There are unanswered (null) values.");
+            submitBtn.style.display = 'none';
+
+        } else {
+            submitBtn.style.display = 'inline-block';
+
+        }
+
+
     });
 
     falseBtn.addEventListener('click', () => {
         falseBtn.classList.add('selected');
         trueBtn.classList.remove('selected');
         userAnswers[currentQuestionIndex] = false;
+
+        console.log(userAnswers);
+   
+        if (userAnswers.some(value => value === null)) {
+            console.log("There are unanswered (null) values.");
+            submitBtn.style.display = 'none';
+
+        } else {
+            submitBtn.style.display = 'inline-block';
+
+        }
+
+
     });
 
     // Start timer
@@ -406,9 +375,9 @@ require '../db_conn.php';
         const unanswered = userAnswers.filter(answer => answer === null).length;
 
         if (unanswered > 0) {
-            if (confirm(`You have ${unanswered} unanswered questions. Are you sure you want to submit?`)) {
+            if (alert(`You have ${unanswered} unanswered questions. PLease answer them all?`)) {
             //jeffmarker1
-                endQuiz();
+                //endQuiz();
             }
         } else {
             endQuiz();
@@ -416,6 +385,8 @@ require '../db_conn.php';
     });
 
     restartBtn.addEventListener('click', () => {
+        submitBtn.style.display = 'none';
+
         currentQuestionIndex = 0;
         timeLeft = 20 * 60;
         userAnswers = new Array(questions.length).fill(null);
@@ -436,8 +407,12 @@ require '../db_conn.php';
         //window.location.href = '../Games.php';
     });
 
+   
+
+
     // Navigation buttons functionality
     nextBtn.addEventListener('click', () => {
+
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
             displayQuestion();
@@ -522,6 +497,8 @@ function saveScoreToDatabase(score) {
         console.error('Error:', error);  // Log any error that occurs during the fetch
         alert('An error occurred. Please try again later.'); // Display user-friendly error message
     });
+    showScoreSavedPopup(); 
+
 }
 
 
@@ -533,14 +510,15 @@ function showScoreSavedPopup() {
     document.body.appendChild(popup);
 
     document.getElementById('okBtn').addEventListener('click', () => {
-        window.location.href = 'Games.php'; // Redirect to Games.php
+        window.location.href = '../Games.php'; // Redirect to Games.php
     });
+
 
     // Automatically close the popup and redirect after 3 seconds
     setTimeout(() => {
         window.location.href = '../Games.php';
     }, 3000);
-}
+}   
 
 
     // Initially hide quiz container

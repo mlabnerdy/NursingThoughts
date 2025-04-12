@@ -56,7 +56,7 @@ require '../db_conn.php';
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
         <a class="nav-link" href="Homepage.php">Home</a>
-        <a class="nav-link active" href="Games.php">Games</a>
+        <a class="nav-link active" href="../Games.php">Games</a>
         <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
       </div>
       <div class="dropdown">
