@@ -51,13 +51,13 @@ require '../db_conn.php';
   </div>
 
   <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
+      <!-- Navbar -->
+      <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
-        <a class="nav-link" href="Homepage.php">Home</a>
+        <a class="nav-link" href="../Homepage.php">Home</a>
         <a class="nav-link active" href="../Games.php">Games</a>
-        <a class="nav-link" href="Leaderboard.php">Leaderboard</a>
+        <a class="nav-link" href="../Leaderboard.php">Leaderboard</a>
       </div>
       <div class="dropdown">
         <div class="nav-profile dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,7 +70,6 @@ require '../db_conn.php';
         </ul>
       </div>
     </nav>
-
     <!-- Main Content -->
     <div class="main-content">
       <div class="container flashcard-container">

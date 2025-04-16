@@ -51,8 +51,8 @@ require '../db_conn.php';
   </div>
 
   <div class="wrapper">
-  <!-- Navbar -->
-  <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
+      <!-- Navbar -->
+      <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
       <div class="nav-avatar"></div>
       <div class="d-flex gap-4">
         <a class="nav-link" href="../Homepage.php">Home</a>
