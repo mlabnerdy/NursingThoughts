@@ -402,6 +402,21 @@ require '../db_conn.php';
         }
       });
     });
+    
+    let isQuizInProgress = true; // Set to true while the quiz is active
+
+window.addEventListener('beforeunload', function (e) {
+  if (isQuizInProgress) {
+    e.preventDefault();
+    e.returnValue = ''; // This triggers the browser's default confirmation dialog
+  }
+});
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+  isQuizInProgress = false;
+});
+
+
   </script>
 </body>
 </html>

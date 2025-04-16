@@ -67,8 +67,9 @@ require '../db_conn.php';
     <i class="bi bi-question-circle"></i> QUIZ GAME
   </h1>
   <h2 class="quiz-subtitle">Select a correct answer</h2>
+  <h2 class="quiz-mainSub">Answer all questions to Submit!</h2>
 
-  <div id="timer">20:00</div>
+  <div id="timer">10:00</div>
   
   <div class="quiz-card">
     <div class="quiz-question" id="questionText"></div>
@@ -144,7 +145,7 @@ require '../db_conn.php';
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let timer;
-    let timeLeft = 20 * 60; // 20 minutes in seconds
+    let timeLeft = 10 * 60; // 20 minutes in seconds
     let quizActive = false;
 
     // DOM elements
@@ -385,22 +386,28 @@ require '../db_conn.php';
     });
 
     restartBtn.addEventListener('click', () => {
-        submitBtn.style.display = 'none';
+    submitBtn.style.display = 'none';
 
-        currentQuestionIndex = 0;
-        timeLeft = 20 * 60;
-        userAnswers = new Array(questions.length).fill(null);
+    currentQuestionIndex = 0;
+    timeLeft = 20 * 60;
+    userAnswers = new Array(questions.length).fill(null);
 
-        completionModal.style.display = 'none';
-        quizContainer.style.display = 'flex';
+    completionModal.style.display = 'none';
+    quizContainer.style.display = 'flex';
 
-        shuffleArray(questions);
+    // Reset navigation buttons
+    prevBtn.style.visibility = 'hidden';
+    prevBtn.style.display = 'inline-block';
 
-        startTimer();
-        displayQuestion();
+    nextBtn.style.visibility = 'visible';
+    nextBtn.style.display = 'inline-block';
 
-        quizActive = true;
-    });
+    shuffleArray(questions);
+    displayQuestion();
+
+    quizActive = true;
+});
+
 
     finishBtn.addEventListener('click', () => {
         endQuizSave();
@@ -517,8 +524,21 @@ function showScoreSavedPopup() {
     // Automatically close the popup and redirect after 3 seconds
     setTimeout(() => {
         window.location.href = '../Games.php';
-    }, 3000);
+    }, 100);
 }   
+
+let isQuizInProgress = true; // Set to true while the quiz is active
+
+window.addEventListener('beforeunload', function (e) {
+  if (isQuizInProgress) {
+    e.preventDefault();
+    e.returnValue = ''; // This triggers the browser's default confirmation dialog
+  }
+});
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+  isQuizInProgress = false;
+});
 
 
     // Initially hide quiz container

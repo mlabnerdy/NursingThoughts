@@ -371,6 +371,11 @@
     margin-bottom: 20px;
 }
 
+.quiz-mainSub {
+    color: red;
+  }
+  
+
 .quiz-title i {
     margin-right: 10px;
     font-size: 1.5em;
