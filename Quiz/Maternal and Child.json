@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 8,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 8,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 8,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 8,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 8,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 8,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "Which of the following is a key component of prenatal care during the first trimester?",
+    "options": ["Blood glucose monitoring", "Genetic screening and ultrasounds", "Measuring fundal height", "Administering iron supplements"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "What is the most common cause of postpartum hemorrhage?",
+    "options": ["Uterine atony", "Blood clotting disorders", "Infection", "Ectopic pregnancy"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "During which stage of labor does the cervix dilate from 0 to 10 cm?",
+    "options": ["Latent phase", "Active phase", "Transition phase", "Expulsive phase"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "What is the recommended treatment for gestational diabetes?",
+    "options": ["Insulin and dietary modifications", "Antihypertensive medication", "Bed rest and physical therapy", "Immediate cesarean section"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "Which of the following is a risk factor for developing postpartum depression?",
+    "options": ["High levels of oxytocin", "Prior history of mental health disorders", "Excessive weight gain during pregnancy", "Increased fetal movement during the second trimester"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "A 4-year-old child is brought in with barking cough and stridor. What is the most likely diagnosis?",
+    "options": ["Asthma", "Bronchiolitis", "Croup", "Pneumonia"],
+    "answer": 2
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "A common cause of diarrhea in children under 5 is:",
+    "options": ["E. coli", "Salmonella", "Rotavirus", "Norovirus"],
+    "answer": 2
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "At what age should a child be able to walk independently?",
+    "options": ["6-9 months", "9-12 months", "12-15 months", "18-24 months"],
+    "answer": 2
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "What is the recommended first-line treatment for a child with a fever?",
+    "options": ["Antibiotics", "Tepid sponge baths and fluids", "Corticosteroids", "Immediate hospitalization"],
+    "answer": 1
+  },
+  {
+    "subjectID": 8,
+    "type": "mcq",
+    "question": "Which of the following is a common sign of dehydration in an infant?",
+    "options": ["Excessive drooling", "Dry mouth and fewer wet diapers", "Crying without tears", "Both B and C"],
+    "answer": 3
+  },
+  {
+    "subjectID": 8,
+    "type": "tf",
+    "question": "The best place to check a pulse in an infant is the carotid artery.",
+    "answer": false
+  },
+  {
+    "subjectID": 8,
+    "type": "tf",
+    "question": "Children are more susceptible to dehydration than adults.",
+    "answer": true
+  },
+  {
+    "subjectID": 8,
+    "type": "tf",
+    "question": "Reduced fetal movement in the third trimester can indicate fetal distress and should be reported immediately.",
+    "answer": true
+  },
+  {
+    "subjectID": 8,
+    "type": "tf",
+    "question": "Gestational diabetes can affect the fetus, increasing the risk for macrosomia, hypoglycemia, and other complications.",
+    "answer": true
+  },
+  {
+    "subjectID": 8,
+    "type": "tf",
+    "question": "After 20 weeks, fundal height (in cm) usually corresponds to the number of weeks of gestation.",
+    "answer": true
+  }
+]

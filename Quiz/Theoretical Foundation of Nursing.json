@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 11,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 11,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 11,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 11,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 11,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 11,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Jean Watson's Theory of Human Caring is centered around which of the following key components?",
+    "options": ["The nurse’s emotional presence", "Self-care", "Health promotion", "Organizational behavior"],
+    "answer": 0
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Which theory focuses on the importance of the environment and how it influences a person's health?",
+    "options": ["Environmental Theory", "Adaptation Theory", "Systems Theory", "Nursing Need Theory"],
+    "answer": 0
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Which theory suggests that nursing involves assisting patients in achieving independence in performing activities of daily living?",
+    "options": ["Orem’s Self-Care Deficit Theory", "Henderson’s Nursing Need Theory", "Roy’s Adaptation Model", "Neuman’s Systems Model"],
+    "answer": 0
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Which of the following theorists is known for developing the Interpersonal Relations Theory?",
+    "options": ["Virginia Henderson", "Hildegard Peplau", "Florence Nightingale", "Dorothea Orem"],
+    "answer": 1
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Who is considered the founder of modern nursing theory?",
+    "options": ["Virginia Henderson", "Florence Nightingale", "Dorothea Orem", "Jean Watson"],
+    "answer": 1
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Which of the following best describes a nursing theory?",
+    "options": ["A set of laws used to prescribe patient treatment", "A framework designed to guide nursing practice and research", "A description of a disease and its treatment", "A policy manual for nursing departments"],
+    "answer": 1
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Who developed the Environmental Theory, emphasizing the importance of clean air, water, and surroundings?",
+    "options": ["Virginia Henderson", "Florence Nightingale", "Hildegard Peplau", "Dorothea Orem"],
+    "answer": 1
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "According to Jean Watson’s Theory of Human Caring, which of the following is central to nursing?",
+    "options": ["Administering medication on time", "Performing diagnostic procedures", "Establishing a caring relationship with the patient", "Documenting nursing care"],
+    "answer": 2
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "Which nursing theory focuses on the nurse-patient relationship and the phases of interpersonal interaction?",
+    "options": ["Orem’s Self-Care Deficit Theory", "Roy’s Adaptation Model", "Peplau’s Interpersonal Relations Theory", "Leininger’s Culture Care Theory"],
+    "answer": 2
+  },
+  {
+    "subjectID": 11,
+    "type": "mcq",
+    "question": "In Orem’s Self-Care Deficit Theory, when is nursing care required?",
+    "options": ["When the patient requests it", "When the environment is unsafe", "When individuals cannot meet their own self-care needs", "When the doctor prescribes it"],
+    "answer": 2
+  },
+  {
+    "subjectID": 11,
+    "type": "tf",
+    "question": "Roy’s Adaptation Model focuses on the adaptation of patients to environmental and physiological changes.",
+    "answer": true
+  },
+  {
+    "subjectID": 11,
+    "type": "tf",
+    "question": "The Adaptation Model developed by Roy focuses primarily on the nurse’s role in managing illness.",
+    "answer": false
+  },
+  {
+    "subjectID": 11,
+    "type": "tf",
+    "question": "Peplau's Interpersonal Relations Theory views the nurse-patient relationship as a process of collaboration.",
+    "answer": true
+  },
+  {
+    "subjectID": 11,
+    "type": "tf",
+    "question": "The Theory of Human Needs, developed by Virginia Henderson, is based on the idea that the nurse helps meet the patient’s physiological and psychological needs.",
+    "answer": true
+  },
+  {
+    "subjectID": 11,
+    "type": "tf",
+    "question": "Jean Watson's Theory of Human Caring places less emphasis on the nurse-patient relationship.",
+    "answer": false
+  }
+]

@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 3,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 3,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 3,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 3,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 3,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 3,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which of the following is a principle of bioethics that emphasizes doing good and preventing harm?",
+    "options": ["Autonomy", "Beneficence", "Justice", "Veracity"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which principle is most at risk when a nurse withholds information from a patient to 'protect them'?",
+    "options": ["Fidelity", "Veracity", "Non-maleficence", "Justice"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which ethical concept is most challenged in cases involving organ donation from a deceased patient without prior consent?",
+    "options": ["Justice", "Autonomy", "Fidelity", "Confidentiality"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "What does the principle of autonomy require healthcare providers to do?",
+    "options": ["Follow institutional policy", "Make decisions for patients", "Respect the patient’s right to make their own decisions", "Prevent patients from making risky choices"],
+    "answer": 2
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which of the following best describes bioethics?",
+    "options": ["Ethics applied to hospitals", "The study of law in medicine", "Ethical issues in healthcare and biological sciences", "Religious ethics"],
+    "answer": 2
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which of the following principles of bioethics refers to doing good for the patient?",
+    "options": ["Non-maleficence", "Beneficence", "Autonomy", "Justice"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "The principle of autonomy is best demonstrated when a patient:",
+    "options": ["Refuses treatment after being fully informed", "Asks for help with daily activities", "Accepts medication from a nurse", "Allows the doctor to choose treatment"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "What is the ethical dilemma when a terminally ill patient requests assistance in dying?",
+    "options": ["Justice vs. veracity", "Beneficence vs. non-maleficence", "Autonomy vs. fidelity", "Non-maleficence vs. autonomy"],
+    "answer": 3
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "Which bioethical principle is violated if a patient is forced to undergo a procedure?",
+    "options": ["Beneficence", "Autonomy", "Justice", "Veracity"],
+    "answer": 1
+  },
+  {
+    "subjectID": 3,
+    "type": "mcq",
+    "question": "A nurse prioritizes care based on patient needs. This demonstrates which principle?",
+    "options": ["Veracity", "Justice", "Fidelity", "Beneficence"],
+    "answer": 3
+  },
+  {
+    "subjectID": 3,
+    "type": "tf",
+    "question": "Informed consent requires that the patient understands the treatment and its risks and benefits before agreeing to it.",
+    "answer": true
+  },
+  {
+    "subjectID": 3,
+    "type": "tf",
+    "question": "Virtue ethics focuses on the consequences of actions rather than the character of the person making the decisions.",
+    "answer": false
+  },
+  {
+    "subjectID": 3,
+    "type": "tf",
+    "question": "Paternalism in healthcare refers to healthcare providers making decisions for patients without considering their preferences.",
+    "answer": true
+  },
+  {
+    "subjectID": 3,
+    "type": "tf",
+    "question": "Beneficence requires healthcare providers to actively promote the well-being of patients.",
+    "answer": true
+  },
+  {
+    "subjectID": 3,
+    "type": "tf",
+    "question": "The ethical principle of confidentiality means that a patient's health information can be shared freely with anyone who requests it.",
+    "answer": false
+  }
+]

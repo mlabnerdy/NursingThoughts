@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 5,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 5,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 5,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 5,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 5,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 5,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "Which of the following routes provides the fastest drug absorption?",
+    "options": ["Oral", "Intramuscular", "Subcutaneous", "Intravenous"],
+    "answer": 3
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "What is the antidote for acetaminophen overdose?",
+    "options": ["Naloxone", "Atropine", "N-acetylcysteine", "Protamine sulfate"],
+    "answer": 2
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "Which class of drugs lowers blood pressure by blocking beta receptors?",
+    "options": ["Beta-blockers", "ACE inhibitors", "Calcium channel blockers", "Diuretics"],
+    "answer": 0
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "A patient with digoxin toxicity may experience:",
+    "options": ["Hypertension", "Yellow vision", "Bradycardia", "Both B and C"],
+    "answer": 3
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "What is a common side effect of opioid analgesics?",
+    "options": ["Diarrhea", "Hypertension", "Constipation", "Insomnia"],
+    "answer": 2
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "What is the peak time for regular insulin?",
+    "options": ["30 min", "2–4 hours", "6–8 hours", "12 hours"],
+    "answer": 1
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "The nurse should hold digoxin if the apical pulse is:",
+    "options": ["Less than 90", "Less than 70", "Less than 60", "Greater than 100"],
+    "answer": 2
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "A patient is prescribed warfarin for atrial fibrillation. Which of the following foods should the nurse advise the patient to limit in their diet?",
+    "options": ["Bananas", "Broccoli", "Chicken", "Apples"],
+    "answer": 1
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "A nurse is administering furosemide (Lasix) to a patient. Which of the following laboratory values is most important to monitor?",
+    "options": ["Hemoglobin", "Platelet count", "Potassium level", "Blood glucose"],
+    "answer": 2
+  },
+  {
+    "subjectID": 5,
+    "type": "mcq",
+    "question": "Which of the following drugs is considered a beta-blocker?",
+    "options": ["Lisinopril", "Amlodipine", "Metoprolol", "Losartan"],
+    "answer": 2
+  },
+  {
+    "subjectID": 5,
+    "type": "tf",
+    "question": "Warfarin and aspirin can be safely taken together without increased bleeding risk.",
+    "answer": false
+  },
+  {
+    "subjectID": 5,
+    "type": "tf",
+    "question": "Digoxin can cause bradycardia if levels are too high.",
+    "answer": true
+  },
+  {
+    "subjectID": 5,
+    "type": "tf",
+    "question": "NSAIDs such as ibuprofen can cause gastrointestinal bleeding with prolonged use.",
+    "answer": true
+  },
+  {
+    "subjectID": 5,
+    "type": "tf",
+    "question": "Drugs with a narrow therapeutic index require close monitoring of blood levels.",
+    "answer": true
+  },
+  {
+    "subjectID": 5,
+    "type": "tf",
+    "question": "All antibiotics are safe to take during pregnancy.",
+    "answer": false
+  }
+]

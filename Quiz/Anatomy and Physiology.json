@@ -1,103 +1,99 @@
 [
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 7,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 7,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 7,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 7,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 7,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 7,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "Which organelle is commonly referred to as the “powerhouse” of the cell?",
+    "options": ["Nucleus", "Ribosome", "Mitochondrion", "Endoplasmic reticulum"],
+    "answer": 2
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "The term “homeostasis” refers to the body’s ability to:",
+    "options": ["Fight infections", "Maintain a stable internal environment", "Produce energy", "Enhance muscle growth"],
+    "answer": 1
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "Which of the following is NOT one of the four major tissue types?",
+    "options": ["Epithelial", "Connective", "Muscular", "Neural"],
+    "answer": 3
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "Which organ system is primarily responsible for the removal of waste products from the body?",
+    "options": ["Digestive system", "Respiratory system", "Urinary system", "Endocrine system"],
+    "answer": 2
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "What is the role of the alveolar capillaries?",
+    "options": ["Transporting nutrients to alveoli", "Facilitating the exchange of oxygen and carbon dioxide", "Producing surfactant", "Absorbing water from the lungs"],
+    "answer": 1
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "Which structure in the brain regulates the sleep-wake cycle?",
+    "options": ["Thalamus", "Hypothalamus", "Pituitary gland", "Cerebellum"],
+    "answer": 1
+  },
+  {
+    "subjectID": 7,
+    "type": "mcq",
+    "question": "Which cell type is primarily responsible for myelin production in the peripheral nervous system?",
+    "options": ["Oligodendrocytes", "Schwann cells", "Astrocytes", "Microglia"],
+    "answer": 1
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The diaphragm plays a major role in breathing.",
+    "answer": true
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "Osteoblasts are cells that break down bone tissue.",
+    "answer": false
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The femur is the longest bone in the human body.",
+    "answer": true
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The sinoatrial (SA) node is known as the 'pacemaker' of the heart.",
+    "answer": true
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The liver is the primary organ responsible for oxygen exchange in the body.",
+    "answer": false
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The diaphysis is the shaft or central part of a long bone.",
+    "answer": true
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "The sympathetic nervous system is responsible for the 'rest and digest' response.",
+    "answer": false
+  },
+  {
+    "subjectID": 7,
+    "type": "tf",
+    "question": "Enzymes are proteins that speed up chemical reactions in the body.",
+    "answer": true
+  }
+]

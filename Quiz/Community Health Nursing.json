@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 9,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 9,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 9,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 9,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 9,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 9,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which of the following is a primary responsibility of a community health nurse in health promotion?",
+    "options": ["Administering vaccinations to individuals", "Providing care for patients with chronic diseases in the hospital", "Implementing a community-wide campaign for disease prevention", "Conducting surgeries for emergency medical cases"],
+    "answer": 2
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which of the following is the focus of primary prevention in community health nursing?",
+    "options": ["Early detection of diseases", "Treatment of chronic diseases", "Health education and immunizations", "Rehabilitation and recovery"],
+    "answer": 2
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "What is an example of secondary prevention in community health?",
+    "options": ["Immunization programs", "Cancer screening programs", "Health promotion campaigns", "Nutrition education"],
+    "answer": 1
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "What does the term 'health equity' refer to in community health?",
+    "options": ["Providing the same care to all individuals", "Ensuring all individuals have access to the resources they need for optimal health", "Focusing only on the most vulnerable populations", "Equal distribution of healthcare resources among communities"],
+    "answer": 1
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which of the following is NOT a core function of public health nursing?",
+    "options": ["Assessment", "Policy development", "Personal health care delivery", "Assurance"],
+    "answer": 2
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "The term 'social determinants of health' refers to:",
+    "options": ["Health-related behaviors", "The social, economic, and environmental factors that influence health", "Medical treatments and interventions", "The genetic factors influencing health"],
+    "answer": 1
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which model of health focuses on preventing diseases and promoting wellness through the modification of risk factors?",
+    "options": ["Medical model", "Social model", "Health promotion model", "Pathophysiology model"],
+    "answer": 2
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which of the following is a key aspect of the public health nursing process?",
+    "options": ["Individual treatment plans", "Community assessment and intervention planning", "Focusing only on medical diagnoses", "Diagnosing and treating diseases in a hospital setting"],
+    "answer": 1
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "Which of the following describes 'community health nursing assessment'?",
+    "options": ["The evaluation of individual health conditions in a hospital setting", "A review of healthcare systems in a community", "The identification of community health needs and resources", "The process of setting individual health goals"],
+    "answer": 2
+  },
+  {
+    "subjectID": 9,
+    "type": "mcq",
+    "question": "What is the main role of a public health nurse in a disaster situation?",
+    "options": ["To provide surgical care to injured individuals", "To assess health needs and coordinate healthcare resources", "To perform emergency surgeries", "To maintain medical records of all patients"],
+    "answer": 1
+  },
+  {
+    "subjectID": 9,
+    "type": "tf",
+    "question": "Primary prevention aims to reduce the impact of a disease once it has occurred.",
+    "answer": false
+  },
+  {
+    "subjectID": 9,
+    "type": "tf",
+    "question": "Community health nurses focus on individual care and hospital-based treatments.",
+    "answer": false
+  },
+  {
+    "subjectID": 9,
+    "type": "tf",
+    "question": "Health education is a key component of health promotion in community health nursing.",
+    "answer": true
+  },
+  {
+    "subjectID": 9,
+    "type": "tf",
+    "question": "Secondary prevention involves early detection and intervention to prevent the progression of disease.",
+    "answer": true
+  },
+  {
+    "subjectID": 9,
+    "type": "tf",
+    "question": "Community health nursing only addresses physical health needs, not mental health needs.",
+    "answer": false
+  }
+]

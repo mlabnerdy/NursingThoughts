@@ -1,103 +1,102 @@
 [
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which nutrient is the primary source of energy for the body?",
-      "options": ["Protein", "Carbohydrate", "Fat", "Vitamins"],
-      "answer": 1
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which vitamin is essential for calcium absorption?",
-      "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
-      "answer": 2
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which of the following is a complete protein source?",
-      "options": ["Rice", "Beans", "Chicken", "Corn"],
-      "answer": 2
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which mineral is most important in maintaining fluid balance in the body?",
-      "options": ["Iron", "Zinc", "Potassium", "Magnesium"],
-      "answer": 2
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "What is the recommended dietary approach for managing hypertension?",
-      "options": ["Paleo diet", "DASH diet", "Keto diet", "Atkins diet"],
-      "answer": 1
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which condition results from a severe deficiency of vitamin C?",
-      "options": ["Pellagra", "Rickets", "Scurvy", "Beriberi"],
-      "answer": 2
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "What type of fat is considered most heart-healthy?",
-      "options": ["Saturated fat", "Trans fat", "Polyunsaturated fat", "Hydrogenated fat"],
-      "answer": 2
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which of the following diets is typically recommended for patients with chronic kidney disease?",
-      "options": ["High protein", "Low sodium and low protein", "High carbohydrate", "High calcium"],
-      "answer": 1
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "Which nutrient is most important for wound healing?",
-      "options": ["Vitamin D", "Vitamin A", "Vitamin K", "Vitamin C"],
-      "answer": 3
-    },
-    {
-      "subjectID": 2,
-      "type": "mcq",
-      "question": "What condition is commonly associated with excessive alcohol intake and thiamine deficiency?",
-      "options": ["Marasmus", "Wernicke-Korsakoff syndrome", "Scurvy", "Anemia"],
-      "answer": 1
-    },
-    {
-      "subjectID": 2,
-      "type": "tf",
-      "question": "Protein is the body's primary source of energy.",
-      "answer": false
-    },
-    {
-      "subjectID": 2,
-      "type": "tf",
-      "question": "Vitamin K is essential for proper blood clotting.",
-      "answer": true
-    },
-    {
-      "subjectID": 2,
-      "type": "tf",
-      "question": "Trans fats are considered healthy and should be included in the diet.",
-      "answer": false
-    },
-    {
-      "subjectID": 2,
-      "type": "tf",
-      "question": "Iron is necessary for the formation of red blood cells.",
-      "answer": true
-    },
-    {
-      "subjectID": 2,
-      "type": "tf",
-      "question": "A high-fiber diet can help prevent constipation.",
-      "answer": true
-    }
-  ]
-  
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "Which step of the nursing process involves gathering patient information?",
+    "options": ["Diagnosis", "Planning", "Assessment", "Evaluation"],
+    "answer": 2
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "What is the normal range for adult body temperature in Celsius?",
+    "options": ["34–35°C", "36–38°C", "38–40°C", "39–41°C"],
+    "answer": 1
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "Which of the following best describes 'aseptic technique'?",
+    "options": ["A method of sterilizing surgical tools", "A technique used to reduce pathogens", "A procedure to treat infection", "A type of disinfectant"],
+    "answer": 1
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "Which of the following is a legal responsibility of the nurse?",
+    "options": ["Diagnosing disease", "Prescribing medication", "Providing patient education", "Performing surgery"],
+    "answer": 2
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "What should the nurse do first before performing any procedure?",
+    "options": ["Document the procedure", "Identify the patient", "Wash hands", "Explain the procedure"],
+    "answer": 2
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "Which action would the nurse take if a patient begins to fall?",
+    "options": ["Hold the patient up forcefully", "Call for help immediately", "Let the patient fall to avoid injury", "Ease the patient to the floor gently"],
+    "answer": 3
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "How often should restraints be checked for circulation?",
+    "options": ["Every 8 hours", "Every 2 hours", "Every 30 minutes", "Every 15 minutes"],
+    "answer": 3
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "What is the proper way to take a patient's blood pressure?",
+    "options": ["Use a sphygmomanometer and stethoscope", "Use a digital blood pressure monitor", "Use a manual blood pressure cuff", "Use a pulse oximeter"],
+    "answer": 1
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "What is the purpose of a wound dressing?",
+    "options": ["To promote healing", "To prevent infection", "To protect the wound from further injury", "All of the above"],
+    "answer": 3
+  },
+  {
+    "subjectID": 2,
+    "type": "mcq",
+    "question": "What is the normal range for an adult's pulse rate?",
+    "options": ["40-60 beats per minute", "60-100 beats per minute", "100-120 beats per minute", "120-140 beats per minute"],
+    "answer": 1
+  },
+  {
+    "subjectID": 2,
+    "type": "tf",
+    "question": "The nursing process consists of five steps: Assessment, Diagnosis, Planning, Implementation, and Evaluation.",
+    "answer": true
+  },
+  {
+    "subjectID": 2,
+    "type": "tf",
+    "question": "It is acceptable to leave a patient’s bed in the high position after care is completed.",
+    "answer": false
+  },
+  {
+    "subjectID": 2,
+    "type": "tf",
+    "question": "Vital signs include temperature, pulse, respiration, and blood pressure.",
+    "answer": true
+  },
+  {
+    "subjectID": 2,
+    "type": "tf",
+    "question": "The nursing process is a linear process that includes only assessment and diagnosis.",
+    "answer": false
+  },
+  {
+    "subjectID": 2,
+    "type": "tf",
+    "question": "The primary goal of nursing care is to provide emotional support to the patient.",
+    "answer": false
+  }
+]
