@@ -1,67 +1,122 @@
-.dashboard-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    margin-left: 12px;
-  }
-  .dashboard-title span {
-    color: #f9943b;
-  }
-  
-  .subject-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 10px 20px;
-  }
-  
-  .subject-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .subject-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .subject-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-  
-  .subject-name {
-    font-weight: normal; /* removed bold */
-    font-size: 0.9rem; /* made slightly smaller */
-    padding: 10px 15px 0;
-}
-  
-  .progress {
-    color: #f9943b;
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 0 15px 12px;
-  }
-  
-  .subject-divider {
-    margin: 5px 15px 10px;
-    border: none;
-    border-top: 2px solid #e25615;
+:root {
+  --primary-color: #f57c00;
+  --secondary-color: #ffb74d;
+  --light-bg: #fff8f1;
+  --dark-text: #2c3e50;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.progress-wrapper {
-    padding: 0 15px 15px;
+.container-flex {
+  padding: 2rem 1rem;
 }
 
-.progress {
-    color: #f9943b;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 2px;
+/* Top Performers Card */
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.25rem;
+  border-bottom: none;
+}
+
+.card-header h3, .card-header h4 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Featured Performers */
+.featured-item {
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.featured-item:hover {
+  transform: scale(1.03);
+}
+
+.featured-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.featured-item h5 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.featured-item p {
+  color: var(--dark-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Performance Overview */
+.performance-chart {
+  height: 320px;
+  margin-bottom: 1rem;
+}
+
+.list-group {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item {
+  border: none;
+  border-left: 4px solid var(--secondary-color);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item:hover {
+  background-color: var(--light-bg);
+  border-left-width: 6px;
+  transform: translateX(5px);
+}
+
+.list-group-item span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .performance-chart {
+    height: 250px;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .featured-item:last-child {
+    margin-bottom: 0;
+  }
 }
