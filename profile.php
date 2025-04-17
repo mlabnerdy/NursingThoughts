@@ -1,204 +1,136 @@
 <?php
 session_start();
-// Add your database connection here
+require_once 'db_conn.php';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Handle profile update
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $yearlevel = $_POST['yearlevel'];
+
+    $stmt = $pdo->prepare("UPDATE users SET fullName = ?, YrLvl = ?, email = ? WHERE user_id = ?");
+    if ($stmt->execute([$fullname, $yearlevel, $email, $user_id])) {
+        echo "<script>alert('Profile updated successfully'); window.location.href='profile.php';</script>";
+    } else {
+        echo "Error updating profile.";
+    }
+}
+
+// Fetch current user data
+$stmt = $pdo->prepare("SELECT schoolID, fullName, YrLvl, email FROM users WHERE user_id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            background-color:rgb(231, 215, 194);
-        }
-        .profile-section {
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .scores-card {
-            height: 600px;
-            overflow-y: auto;
-        }
-        .accordion-button {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .accordion-button .badge {
-            margin-left: 10px;
-        }
-        .scores-card {
-            height: 600px;
-            overflow-y: auto;
-        }
-        .list-group-item {
-            border: none;
-            padding: 0.5rem 1rem;
-        }
-        /* Color scheme */
-        .btn-orange {
-            background-color: #f39c12;
-            color: white;
-        }
-        .btn-orange:hover {
-            background-color: #e67e22;
-        }
-        .accordion-button.collapsed {
-            background-color: #f39c12;
-            color: white;
-        }
-        .accordion-button.collapsed:hover {
-            background-color: #e67e22;
-        }
-        .accordion-body {
-            background-color: #f9f9f9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nursing Thoughts - Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="profile.css" />
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="row">
-            <!-- User Details Section -->
-            <div class="col-md-8">
-                <div class="profile-section">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="default-avatar.png" class="img-fluid rounded-circle" alt="Profile Picture">
-                        </div>
-                        <div class="col-md-8">
-                            <h2>Student Name</h2>
-                            <p>Student ID: 12345</p>
-                            <p>Course: Bachelor of Science in Nursing</p>
-                            <p>Year Level: 3rd Year</p>
-                        </div>
-                    </div>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg px-3" style="background-color: #f57c00; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <div class="container-fluid">
+        <!-- Logo with Nursing Theme -->
+        <a class="navbar-brand d-flex align-items-center" href="Homepage.php">
+          <div class="nav-logo me-2" style="font-size: 1.8rem; color: #e74c3c;">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <span style="font-weight: 600; color: #2c3e50;">NursingThoughts</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="d-flex ms-auto align-items-center">
+            <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+              <li class="nav-item">
+                <a class="nav-link" href="Homepage.php"><i class="bi bi-house-door me-1"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Games.php"><i class="bi bi-joystick me-1"></i> Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Leaderboard.php"><i class="bi bi-trophy me-1"></i> Leaderboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="profile.php"><i class="bi bi-person me-1"></i> Profile</a>
+              </li>
+
+              <!-- Red divider before logout -->
+              <li>
+                <hr class="dropdown-divider" style="border-top: 2px solid #e74c3c; margin: 0 1rem;">
+              </li>
+
+              <!-- Red Logout Button -->
+              <li class="nav-item ms-2">
+                <a class="btn btn-danger" href="logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-container container">
+        <div class="profile-card">
+            <h1 class="profile-title">User Profile</h1>
+            <form class="profile-form" method="POST" action="profile.php">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" value="<?= htmlspecialchars($user['fullName']) ?>" required>
                 </div>
-                
-                <!-- Graph Section -->
-                <div class="profile-section">
-                    <h3>Performance Overview</h3>
-                    <canvas id="performanceChart"></canvas>
+
+                <div class="form-group">
+                    <label for="schoolid">School ID</label>
+                    <input type="text" id="schoolid" name="schoolid" value="<?= htmlspecialchars($user['schoolID']) ?>" readonly>
                 </div>
-            </div>
-            
-            <!-- Scores Section -->
-            <div class="col-md-4">
-                <div class="card scores-card">
-                    <div class="card-header">
-                        <h3>Subject Scores</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="subjectAccordion">
-                            <!-- Nutrition and Diet Therapy -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="nutritionHeading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nutritionCollapse">
-                                        Nutrition and Diet Therapy
-                                        <span class="badge bg-primary ms-auto">85</span>
-                                    </button>
-                                </h2>
-                                <div id="nutritionCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Quiz Game</span>
-                                                <span class="badge bg-info">90/100</span>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Flashcard</span>
-                                                <span class="badge bg-info">80/100</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Anatomy and Physiology -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="anatomyHeading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#anatomyCollapse">
-                                        Anatomy and Physiology
-                                        <span class="badge bg-primary ms-auto">92</span>
-                                    </button>
-                                </h2>
-                                <div id="anatomyCollapse" class="accordion-collapse collapse" data-bs-parent="#subjectAccordion">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Quiz Game</span>
-                                                <span class="badge bg-info">95/100</span>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Flashcard</span>
-                                                <span class="badge bg-info">90/100</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add more subjects in similar fashion -->
-                        </div>
-                    </div>
+
+                <div class="form-group">
+                    <label for="yearlevel">Year Level</label>
+                    <select id="yearlevel" name="yearlevel" required>
+                        <option value="">Select Year Level</option>
+                        <?php
+                        for ($i = 1; $i <= 5; $i++) {
+                            $selected = ($user['YrLvl'] == $i) ? 'selected' : '';
+                            echo "<option value=\"$i\" $selected>{$i}st Year</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
+                </div>
+
+                <button type="submit" class="save-btn">Save Profile</button>
+            </form>
         </div>
     </div>
 
-    <script>
-        // Data for the performance pie chart
-        const data = {
-            labels: [
-                'Nutrition and Diet Therapy',
-                'Anatomy and Physiology',
-                'Community Health Nursing',
-                'Fundamentals of Nursing',
-                'Pharmacology',
-                'Maternal and Child Nursing',
-                'Health Assessment',
-                'Bio-Ethics',
-                'Medical Terminologies',
-                'RABE',
-                'Theoretical Foundation of Nursing'
-                'Medical tools and Equipment'
-            ],
-            datasets: [{
-                data: [85, 92, 78, 80, 89, 91, 86, 75, 88, 83, 77], // Sample performance data for each subject
-                backgroundColor: [
-                    '#FF5733', '#FF8D1A', '#FFC300', '#FFB400', '#FF6F00', '#D35400',
-                    '#F39C12', '#E67E22', '#F39C12', '#F0A500', '#F39C12'
-                ]
-            }]
-        };
+      <!-- Footer -->
+  <footer class="footer">
+    <div>@NursingThoughts</div>
+    <a href="AboutUs.php">About Us</a>
+  </footer>
+</div>
 
-        // Create the pie chart
-        const ctx = document.getElementById('performanceChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'pie',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'right'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return `${context.label}: ${context.raw}%`;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

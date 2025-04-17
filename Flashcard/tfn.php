@@ -51,25 +51,51 @@ require '../db_conn.php';
   </div>
 
   <div class="wrapper">
-      <!-- Navbar -->
-      <nav class="navbar sticky-top d-flex justify-content-between align-items-center px-3">
-      <div class="nav-avatar"></div>
-      <div class="d-flex gap-4">
-        <a class="nav-link" href="../Homepage.php">Home</a>
-        <a class="nav-link active" href="../Games.php">Games</a>
-        <a class="nav-link" href="../Leaderboard.php">Leaderboard</a>
+<!-- Navbar -->
+<nav class="navbar sticky-top navbar-expand-lg px-3" style="background-color: #f57c00; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <div class="container-fluid">
+    <!-- Logo with Nursing Theme -->
+    <a class="navbar-brand d-flex align-items-center" href="Homepage.php">
+      <div class="nav-logo me-2" style="font-size: 1.8rem; color: #e74c3c;">
+        <i class="bi bi-heart-pulse"></i>
       </div>
-      <div class="dropdown">
-        <div class="nav-profile dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-fill"></i>
-        </div>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-          <li><a class="dropdown-item" href="profile.php"><i class="bi bi-person me-2"></i>Profile</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+      <span style="font-weight: 600; color: #2c3e50;">NursingThoughts</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="d-flex ms-auto align-items-center">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../Homepage.php"><i class="bi bi-house-door me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../Games.php"><i class="bi bi-joystick me-1"></i> Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Leaderboard.php"><i class="bi bi-trophy me-1"></i> Leaderboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profile.php"><i class="bi bi-person me-1"></i> Profile</a>
+          </li>
+
+          <!-- Red divider before logout -->
+          <li>
+            <hr class="dropdown-divider" style="border-top: 2px solid #e74c3c; margin: 0 1rem;">
+          </li>
+
+          <!-- Red Logout Button -->
+          <li class="nav-item ms-2">
+            <a class="btn btn-danger" href="../logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
+          </li>
         </ul>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
 
 
     <!-- Main Content -->
