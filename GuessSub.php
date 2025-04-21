@@ -71,6 +71,8 @@ require 'db_conn.php';
 
 <!-- Main Content -->
 
+<!-- Main Content -->
+<!-- Main Content -->
 
     <!-- Footer -->
     <footer class="footer">
