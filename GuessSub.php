@@ -70,29 +70,7 @@ require 'db_conn.php';
 </nav>
 
 <!-- Main Content -->
-<div class="main-content d-flex align-items-center justify-content-center">
-  <div class="container py-5">
-    <h1 class="text-center page-title">SUBJECTS</h1>
-    <div class="row justify-content-center">
-      <div class="col-lg-10 col-xl-10">
-        <div class="subject-grid">
-          <a href="rabe-url.html"><button class="subject-btn">RABE</button></a>
-          <a href="fundamentals-in-nursing-url.html"><button class="subject-btn">Fundamentals in Nursing</button></a>
-          <a href="bio-ethics-url.html"><button class="subject-btn">Bio-Ethics</button></a>
-          <a href="osce-url.html"><button class="subject-btn">OSCE</button></a>
-          <a href="pharmacology-url.html"><button class="subject-btn">Pharmacology</button></a>
-          <a href="medical-terminologies-url.html"><button class="subject-btn">Medical Terminologies</button></a>
-          <a href="anatomy-and-physiology-url.html"><button class="subject-btn">Anatomy and Physiology</button></a>
-          <a href="maternal-and-child-url.html"><button class="subject-btn">Maternal and Child</button></a>
-          <a href="medical-tools-and-equipments-url.html"><button class="subject-btn">Medical tools and equipments</button></a>
-          <a href="community-health-nursing-url.html"><button class="subject-btn">Community Health Nursing</button></a>
-          <a href="health-assessment-url.html"><button class="subject-btn">Health Assessment</button></a>
-          <a href="theoretical-foundation-of-nursing-url.html"><button class="subject-btn">Theoretical Foundation of Nursing</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
     <!-- Footer -->
     <footer class="footer">
