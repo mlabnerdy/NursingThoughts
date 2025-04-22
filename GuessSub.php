@@ -102,19 +102,33 @@ $quizItems = json_decode($jsonData, true);
 
     <!-- Quiz Container -->
     <div class="quiz-container">
-      <h2>Guess the Medical Tool</h2>
-      <img id="tool-image" src="" alt="Medical Tool">
-      <p id="description"></p>
-      <input type="text" id="user-answer" placeholder="Type your answer here">
-      <div id="feedback" style="margin-top: 10px;"></div>
+  <div id="quiz-content">
+    <div id="question-counter" style="font-weight: bold; margin-bottom: 15px;"></div>
+    <h2>Guess the Medical Tool</h2>
+    <img id="tool-image" src="" alt="Medical Tool">
+    <p id="description"></p>
+    <input type="text" id="user-answer" placeholder="Type your answer here">
+    <div id="feedback" style="margin-top: 10px;"></div>
 
-      <div>
-        <button class="btn" onclick="nextQuestion()">Next</button>
-        <button class="btn" onclick="finishQuiz()">Submit</button>
-      </div>
-      <div id="score" style="font-weight: bold; margin-top: 20px;"></div>
-      <div id="review"></div>
+    <div>
+      <button class="btn" onclick="nextQuestion()">Next</button>
+      <button class="btn" onclick="finishQuiz()">Submit</button>
     </div>
+  </div>
+
+  <!-- This will remain and be shown after Submit -->
+  <div id="result-section" style="display: none;">
+    <div id="score" style="font-weight: bold; margin-top: 20px;"></div>
+    <div id="review"></div>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button class="btn btn-warning px-4 fw-bold text-white" onclick="resetQuiz()" style="border-radius: 25px;">Try Again</button>
+      <a href="Homepage.php" class="btn btn-outline-warning px-4 fw-bold" style="border-radius: 25px;">Exit</a>
+    </div>
+  </div>
+</div>
+
+
+    
 
     <!-- Footer (DO NOT MODIFY) -->
     <footer class="footer">
@@ -123,122 +137,135 @@ $quizItems = json_decode($jsonData, true);
     </footer>
   </div>
 
-
   <script>
   const items = <?php echo json_encode($quizItems); ?>;
 
-  let currentIndex = 0;
-  let userAnswers = Array(items.length).fill("");
-  let answeredFlags = Array(items.length).fill(false);
-
-  function loadQuestion() {
-    const current = items[currentIndex];
-    document.getElementById('tool-image').src = `IMAGE/MEDICAL TOOLS AND EQUIPMENT/${current.image}`;
-    document.getElementById('description').textContent = current.description;
-    document.getElementById('user-answer').value = userAnswers[currentIndex] || "";
-    document.getElementById('score').textContent = "";
-    document.getElementById('review').innerHTML = "";
-    document.getElementById('feedback').innerHTML = "";
-
-    const input = document.getElementById('user-answer');
-    input.disabled = answeredFlags[currentIndex];
-
-    if (answeredFlags[currentIndex]) {
-      showAnswerFeedback(currentIndex);
-    }
+  // Shuffle function
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
+}
 
-  function showAnswerFeedback(index) {
-    const user = userAnswers[index];
-    const correct = items[index].answer;
-    const input = document.getElementById('user-answer');
+// Shuffle the items
+const shuffledItems = shuffle([...items]); // Clone and shuffle
+let currentIndex = 0;
+let userAnswers = Array(shuffledItems.length).fill("");
+let answeredFlags = Array(shuffledItems.length).fill(false);
 
-    let feedbackText = "";
-    let feedbackColor = "";
+function loadQuestion() {
+  const current = shuffledItems[currentIndex];
+  document.getElementById('tool-image').src = `IMAGE/MEDICAL TOOLS AND EQUIPMENT/${current.image}`;
+  document.getElementById('description').textContent = current.description;
+  document.getElementById('user-answer').value = userAnswers[currentIndex] || "";
+  document.getElementById('score').textContent = "";
+  document.getElementById('review').innerHTML = "";
+  document.getElementById('feedback').innerHTML = "";
 
-    if (!user) {
-      feedbackText = "❗ No answer";
-      feedbackColor = "orange";
-    } else if (user.toLowerCase() === correct.toLowerCase()) {
-      feedbackText = "✅ Correct";
-      feedbackColor = "green";
-    } else {
-      feedbackText = `❌ Wrong answer<br>Correct answer: <strong>${correct}</strong>`;
-      feedbackColor = "red";
-    }
+  // Set question counter
+  document.getElementById('question-counter').textContent = `Question ${currentIndex + 1} of ${shuffledItems.length}`;
 
-    document.getElementById('feedback').innerHTML = `<div style="color: ${feedbackColor}; font-weight: bold;">${feedbackText}</div>`;
-  }
+  const input = document.getElementById('user-answer');
+  input.disabled = answeredFlags[currentIndex];
 
-  function nextQuestion() {
-    const input = document.getElementById('user-answer');
-
-    if (answeredFlags[currentIndex]) return;
-
-    userAnswers[currentIndex] = input.value.trim();
-    answeredFlags[currentIndex] = true;
-    input.disabled = true;
-
+  if (answeredFlags[currentIndex]) {
     showAnswerFeedback(currentIndex);
+  }
+}
 
-    // Auto move to next question
-    setTimeout(() => {
-      if (currentIndex < items.length - 1) {
-        currentIndex++;
-        loadQuestion();
-      } else {
-        finishQuiz();
-      }
-    }, 1500);
+function showAnswerFeedback(index) {
+  const user = userAnswers[index];
+  const correct = shuffledItems[index].answer;
+  const input = document.getElementById('user-answer');
+
+  let feedbackText = "";
+  let feedbackColor = "";
+
+  if (!user) {
+    feedbackText = "❗ No answer";
+    feedbackColor = "orange";
+  } else if (user.toLowerCase() === correct.toLowerCase()) {
+    feedbackText = "✅ Correct";
+    feedbackColor = "green";
+  } else {
+    feedbackText = `❌ Wrong answer<br>Correct answer: <strong>${correct}</strong>`;
+    feedbackColor = "red";
   }
 
-  function finishQuiz() {
-    if (!answeredFlags[currentIndex]) {
-      userAnswers[currentIndex] = document.getElementById('user-answer').value.trim();
-      answeredFlags[currentIndex] = true;
+  document.getElementById('feedback').innerHTML = `<div style="color: ${feedbackColor}; font-weight: bold;">${feedbackText}</div>`;
+}
+
+function nextQuestion() {
+  const input = document.getElementById('user-answer');
+
+  if (answeredFlags[currentIndex]) return;
+
+  userAnswers[currentIndex] = input.value.trim();
+  answeredFlags[currentIndex] = true;
+  input.disabled = true;
+
+  showAnswerFeedback(currentIndex);
+
+  setTimeout(() => {
+    if (currentIndex < shuffledItems.length - 1) {
+      currentIndex++;
+      loadQuestion();
+    } else {
+      finishQuiz();
     }
+  }, 1500);
+}
 
-    let score = 0;
-    let reviewHTML = "<h4 class='mt-4'>Review:</h4>";
-
-    items.forEach((item, index) => {
-      const user = userAnswers[index];
-      const correct = item.answer;
-      const isCorrect = user.toLowerCase() === correct.toLowerCase();
-
-      if (isCorrect) score++;
-
-      let statusText = "";
-      let statusColor = "";
-
-      if (!user) {
-        statusText = "❗No answer";
-        statusColor = "orange";
-      } else if (isCorrect) {
-        statusText = "✅ Correct";
-        statusColor = "green";
-      } else {
-        statusText = "❌ Wrong";
-        statusColor = "red";
-      }
-
-      reviewHTML += `
-        <div class="result-item">
-          <strong>Q${index + 1}:</strong> ${item.description}<br>
-          <strong>Your answer:</strong> ${user || "<i>No answer</i>"}<br>
-          <strong>Correct answer:</strong> ${correct}<br>
-          <span style="color: ${statusColor}; font-weight: bold;">${statusText}</span>
-        </div>
-      `;
-    });
-
-    document.getElementById('score').innerHTML = `You scored <strong>${score}</strong> out of ${items.length}`;
-    document.getElementById('review').innerHTML = reviewHTML;
-    document.getElementById('feedback').innerHTML = "";
+function finishQuiz() {
+  if (!answeredFlags[currentIndex]) {
+    userAnswers[currentIndex] = document.getElementById('user-answer').value.trim();
+    answeredFlags[currentIndex] = true;
   }
 
-  window.onload = loadQuestion;
-</script>
+  let score = 0;
+  let reviewHTML = "<h4 class='mt-4'>Review:</h4>";
 
+  shuffledItems.forEach((item, index) => {
+    const user = userAnswers[index] || "No answer";
+    const correct = item.answer;
+    const isCorrect = user.toLowerCase() === correct.toLowerCase();
+
+    if (isCorrect) score++;
+
+    reviewHTML += `
+      <div class="result-item">
+        <strong>Question ${index + 1}:</strong><br>
+        <em>${item.description}</em><br>
+        Your Answer: <strong>${user}</strong><br>
+        Correct Answer: <strong>${correct}</strong><br>
+        Result: ${isCorrect ? "<span style='color:green;'>✅ Correct</span>" : "<span style='color:red;'>❌ Incorrect</span>"}
+      </div>
+    `;
+  });
+
+  // Hide quiz content and show results
+  document.getElementById('quiz-content').style.display = 'none';
+  document.getElementById('result-section').style.display = 'block';
+
+  document.getElementById('score').innerHTML = `You got <strong>${score}</strong> out of <strong>${shuffledItems.length}</strong> correct.`;
+  document.getElementById('review').innerHTML = reviewHTML;
+}
+
+function resetQuiz() {
+  currentIndex = 0;
+  userAnswers = Array(shuffledItems.length).fill("");
+  answeredFlags = Array(shuffledItems.length).fill(false);
+  shuffle(shuffledItems);
+  document.getElementById('quiz-content').style.display = 'block';
+  document.getElementById('result-section').style.display = 'none';
+  loadQuestion();
+}
+
+
+window.onload = loadQuestion;
+
+  </script>
 </body>
 </html>
