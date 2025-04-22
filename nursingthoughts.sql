@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Apr 12, 2025 at 04:50 AM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 21, 2025 at 07:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,6 +33,23 @@ CREATE TABLE `scores` (
   `subject_id` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `scores`
+--
+
+INSERT INTO `scores` (`score_id`, `user_id`, `subject_id`, `score`) VALUES
+(44, 3, 1, 6),
+(47, 3, 2, 7),
+(48, 3, 4, 6),
+(49, 3, 3, 4),
+(50, 3, 5, 4),
+(51, 3, 6, 6),
+(52, 3, 7, 7),
+(54, 4, 2, 6),
+(55, 4, 1, 3),
+(56, 5, 1, 5),
+(57, 5, 2, 7);
 
 -- --------------------------------------------------------
 
@@ -74,8 +91,21 @@ CREATE TABLE `users` (
   `fullName` varchar(100) DEFAULT NULL,
   `YrLvl` varchar(10) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `password_hash` varchar(255) DEFAULT NULL
+  `password_hash` varchar(255) DEFAULT NULL,
+  `reset_token` varchar(255) DEFAULT NULL,
+  `token_expiry` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `schoolID`, `fullName`, `YrLvl`, `email`, `password_hash`, `reset_token`, `token_expiry`) VALUES
+(3, '11-2345', 'Lucky Boi', '1', 'pogiako123@gmail.com', '$2y$10$8ib8ONaY23wMXEXxkgeNAu7N2jqEUYQC8juSThGKPG3sJa3g.grMK', NULL, NULL),
+(4, '11-2233', 'Pogi Ako Diba', '3rd year', 'pogipogi123@gmail.com', '$2y$10$qh7JWXx6UbDYcZivx6SBSuhjXVUdOULi6tSTX8Qg/iPo9leVzIBCG', NULL, NULL),
+(5, '22-0246', 'ganda', '3rd year', 'gandamo@gmail.com', '$2y$10$dhBZ9KO/hhT7yMYtEInKv.3/2pN6CsELlE6YYbp8likUltFLbKfLK', NULL, NULL),
+(6, '11-3451', 'Mister Pogi', '1st year', 'luckykogu@gmail.com', '$2y$10$Jpo8QxeQGfOcMnTckubwyOjEwXxW1j9LP3f/ebLYTvQCHqKfuoKSO', 'f775f42e7051df7b57d15cef910caa35f7dd29bdd2ac41db191b7d256130eae6', '2025-04-22 01:25:32'),
+(7, '30-3333', 'pogipogi', '3rd year', 'pogiakodiba@gmail.com', '$2y$10$DZIBMal.O4vSYlAf/LJsae7Q4mNP1KOPaasaUEm2yc7AzLEQChmla', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -112,7 +142,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `subjects`
@@ -124,7 +154,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

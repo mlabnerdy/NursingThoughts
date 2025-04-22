@@ -171,7 +171,7 @@ require '../db_conn.php';
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let timer;
-    let timeLeft = 1 * 60; // 20 minutes in seconds
+    let timeLeft = 10 * 60; // 10 minutes in seconds
     let quizActive = false;
 
     // DOM elements

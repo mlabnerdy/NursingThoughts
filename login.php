@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="login.css"> <!-- Ensure the CSS file exists and matches the filename -->
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
 
@@ -76,21 +78,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
 
     <div class="form-group mb-3">
-      <input type="email" name="email" class="form-control" placeholder="email" required>
+      <input type="email" name="email" class="form-control" placeholder="Email" required>
     </div>
 
-    <div class="form-group mb-3">
-      <input type="password" name="password" class="form-control" placeholder="password" required>
+    <div class="form-group mb-3 position-relative">
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+      <span toggle="#password" class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y pe-3" id="togglePassword"></span>
     </div>
 
     <button type="submit" class="btn login-btn w-100">LOGIN</button>
 
     <div class="mt-2">
-      <a href="#" class="text-decoration-none text-warning small">Forgot Password?</a>
+      <a href="fpass.php" class="text-decoration-none text-warning small">Forgot Password?</a>
     </div>
 
     <div class="mt-3 text-center">
-      <span class="small">For new user click here to register</span>
+      <span class="small">For new users, click here to register</span>
       <a href="signup.php" class="text-decoration-none fw-bold text-warning"> SIGN UP</a>
     </div>
   </form>
@@ -98,5 +101,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // JavaScript to toggle password visibility
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordField = document.getElementById('password');
+  
+  togglePassword.addEventListener('click', function () {
+    // Toggle the type of password field
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+    
+    // Toggle the eye icon
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-slash');
+  });
+</script>
+
 </body>
 </html>
