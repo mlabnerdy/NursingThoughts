@@ -104,7 +104,7 @@ $quizItems = json_decode($jsonData, true);
     <div class="quiz-container">
   <div id="quiz-content">
     <div id="question-counter" style="font-weight: bold; margin-bottom: 15px;"></div>
-    <h2>Guess the Medical Tool</h2>
+    <h2>Guess the Medical Tools and Equipment</h2>
     <img id="tool-image" src="" alt="Medical Tool">
     <p id="description"></p>
     <input type="text" id="user-answer" placeholder="Type your answer here">
