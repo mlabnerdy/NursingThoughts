@@ -1,0 +1,153 @@
+[
+    {
+      "image": "Defibrillator.png",
+      "description": "Delivers an electric shock to the heart to restore normal rhythm during cardiac arrest.",
+      "answer": "Defibrillator"
+    },
+    {
+      "image": "Stethoscope.png",
+      "description": "Used by healthcare professionals to listen to internal sounds of a patient's body, such as the heartbeat and lungs.",
+      "answer": "Stethoscope"
+    },
+    {
+      "image": "Sphygmomanometer.png",
+      "description": "Measures a patient's blood pressure.",
+      "answer": "Sphygmomanometer"
+    },
+    {
+      "image": "Otoscope.png",
+      "description": "Used to examine the ears for infections or other issues.",
+      "answer": "Otoscope"
+    },
+    {
+      "image": "Ophthalmoscope.png",
+      "description": "Allows examination of the eyes to detect diseases.",
+      "answer": "Ophthalmoscope"
+    },
+    {
+      "image": "Thermometer.png",
+      "description": "Measures body temperature to check for fever.",
+      "answer": "Thermometer"
+    },
+    {
+      "image": "MRI Machine.png",
+      "description": "Uses magnetic fields and radio waves to create detailed images of internal body structures.",
+      "answer": "MRI Machine"
+    },
+    {
+      "image": "X-ray Machine.png",
+      "description": "Captures images of the inside of the body, especially bones.",
+      "answer": "X-ray Machine"
+    },
+    {
+      "image": "Ventilator.png",
+      "description": "Assists patients in breathing when they are unable to do so on their own.",
+      "answer": "Ventilator"
+    },
+    {
+      "image": "Ultrasound Machine.png",
+      "description": "Uses sound waves to create images of internal organs and tissues.",
+      "answer": "Ultrasound Machine"
+    },
+    {
+      "image": "Surgical Laser.png",
+      "description": "Utilizes concentrated light beams for various surgical procedures.",
+      "answer": "Surgical Laser"
+    },
+    {
+      "image": "ECG Machine.png",
+      "description": "Records the electrical activity of the heart.",
+      "answer": "ECG Machine"
+    },
+    {
+      "image": "Infusion Pump.png",
+      "description": "Administers fluids, medications, or nutrients to patients in controlled amounts.",
+      "answer": "Infusion Pump"
+    },
+    {
+      "image": "Pulse Oximeter.png",
+      "description": "Measures oxygen saturation levels in the blood.",
+      "answer": "Pulse Oximeter"
+    },
+    {
+      "image": "Weighing Scale.png",
+      "description": "Measures a patient's body weight.",
+      "answer": "Weighing Scale"
+    },
+    {
+      "image": "First Aid Kit.png",
+      "description": "Contains essential items for basic medical emergencies.",
+      "answer": "First Aid Kit"
+    },
+    {
+      "image": "Ambulance.png",
+      "description": "Vehicle equipped to transport patients and provide emergency medical care.",
+      "answer": "Ambulance"
+    },
+    {
+      "image": "Medical Chair.png",
+      "description": "Specialized chairs used for patient examinations or treatments.",
+      "answer": "Medical Chair"
+    },
+    {
+      "image": "Hot Water Bag.png",
+      "description": "Provides heat therapy to relieve pain.",
+      "answer": "Hot Water Bag"
+    },
+    {
+      "image": "Scissors.png",
+      "description": "Used for cutting materials such as bandages or sutures.",
+      "answer": "Scissors"
+    },
+    {
+      "image": "Torch.png",
+      "description": "Provides focused light for examinations.",
+      "answer": "Torch"
+    },
+    {
+      "image": "Gauze.png",
+      "description": "Used to dress wounds and absorb blood.",
+      "answer": "Gauze"
+    },
+    {
+      "image": "Tweezers.png",
+      "description": "Assist in removing small foreign objects from the body.",
+      "answer": "Tweezers"
+    },
+    {
+      "image": "Pills.png",
+      "description": "Solid medication forms for treating various conditions.",
+      "answer": "Pills"
+    },
+    {
+      "image": "Bandage.png",
+      "description": "Covers and protects wounds.",
+      "answer": "Bandage"
+    },
+    {
+      "image": "Stretcher.png",
+      "description": "Transports patients who cannot move on their own.​",
+      "answer": "Stretcher"
+    },
+    {
+      "image": "Face Mask.png",
+      "description": "Protects against airborne pathogens.",
+      "answer": "Face Mask"
+    },
+    {
+      "image": "Rubber Gloves.png",
+      "description": "Protects hands and prevents contamination.",
+      "answer": "Rubber Gloves"
+    },
+    {
+      "image": "Microscope.png",
+      "description": "Magnifies small samples for examination.",
+      "answer": "Microscope"
+    },
+    {
+      "image": "Saline Bag.png",
+      "description": "Contains sterile saltwater solution for intravenous therapy.",
+      "answer": "Saline Bag"
+    }
+  ]
+  
