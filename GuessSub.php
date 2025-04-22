@@ -25,7 +25,7 @@ $quizItems = json_decode($jsonData, true);
   <link rel="stylesheet" href="nav.css" />
   <style>
     .quiz-container {
-      max-width: 600px;
+      max-width: 500px;
       margin: 40px auto;
       padding: 20px;
       border: 2px solid #f0c28a;
