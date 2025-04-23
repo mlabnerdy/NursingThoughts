@@ -11,7 +11,6 @@
 }
 
 .quiz-card {
-    position: relative; /* This is essential for absolute positioning of child elements */
     width: 100%;
     max-width: 600px;
     min-height: 350px;
@@ -26,7 +25,6 @@
 }
 
 .quiz-question {
-    padding-top: 40px;
     font-size: 1.3rem;
     margin-bottom: 30px;
     flex-grow: 1;
@@ -444,78 +442,5 @@
 .score-saved-popup button:hover {
     background-color: #45a049;
 }
-/* Exit button for the entire quiz */
-.quiz-exit-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 10; /* Ensure it stays above everything */
-  }
 
-  /* Exit button specific for card placement */
-.card-exit-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 6px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 1;
-    background-color: #dc3545; /* Slightly darker red for better contrast */
-    border: none;
-    transition: all 0.2s;
-  }
-  
-  .card-exit-btn:hover {
-    background-color: #c82333;
-    transform: scale(1.05);
-  }
-  
 
-  /* Progress and Exit container */
-.progress-exit-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-  }
-  
-  /* Progress indicator */
-  .progress-indicator {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  /* Exit button */
-  .card-exit-btn {
-    padding: 6px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background-color: #dc3545;
-    border: none;
-    transition: all 0.2s;
-  }
-  
-  .card-exit-btn:hover {
-    background-color: #c82333;
-    transform: scale(1.05);
-  }
-  
-  .quiz-card {
-    padding-bottom: 15px;
-  }
-  

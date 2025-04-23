@@ -20,6 +20,17 @@ require '../db_conn.php';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="../nav.css" />
     <link rel="stylesheet" href="flashcard.css" />
+    <style>
+      /* Add space between Shuffle button and Exit button */
+.shuffle-btn {
+  margin-bottom: 20px; /* Adds space below the Shuffle Cards button */
+}
+
+.exit-btn {
+  margin-top: 20px; /* Adds space above the Exit button */
+}
+
+    </style>
 </head>
 <body>
   <!-- Welcome Modal -->
@@ -98,56 +109,62 @@ require '../db_conn.php';
 </nav>
 
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="container flashcard-container">
-        <div class="flashcard-header">
-          <h1 class="mb-3"><i class="bi bi-book"></i> FLASHCARDS</h1>
-          <p class="lead">Click the card to flip or wait for auto-flip</p>
-        </div>
-        
-        <div class="progress-indicator">
-          Card <span id="current-card">1</span> of <span id="total-cards">10</span>
-        </div>
-        
-        <div class="flashcard" id="flashcard">
-          <div class="flashcard-inner">
-            <div class="flashcard-front">
-              <i class="bi bi-book book-icon"></i>
-              <div class="flashcard-title">Question</div>
-              <div class="flashcard-content" id="question-content">
-                Loading question...
-              </div>
-              <div class="flashcard-hint">Click to reveal answer</div>
-            </div>
-            <div class="flashcard-back">
-              <div class="flashcard-title">Answer</div>
-              <div class="flashcard-content" id="answer-content">
-                Loading answer...
-              </div>
-              <div class="flashcard-hint">Click to return to question</div>
-            </div>
+   <!-- Main Content -->
+<div class="main-content">
+  <div class="container flashcard-container">
+    <div class="flashcard-header">
+      <h1 class="mb-3"><i class="bi bi-book"></i> FLASHCARDS</h1>
+      <p class="lead">Click the card to flip or wait for auto-flip</p>
+    </div>
+    
+    <div class="progress-indicator">
+      Card <span id="current-card">1</span> of <span id="total-cards">10</span>
+    </div>
+    
+    <div class="flashcard" id="flashcard">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <i class="bi bi-book book-icon"></i>
+          <div class="flashcard-title">Question</div>
+          <div class="flashcard-content" id="question-content">
+            Loading question...
           </div>
+          <div class="flashcard-hint">Click to reveal answer</div>
         </div>
-        
-        <div class="timer-container">
-          <div class="timer-progress" id="timer"></div>
+        <div class="flashcard-back">
+          <div class="flashcard-title">Answer</div>
+          <div class="flashcard-content" id="answer-content">
+            Loading answer...
+          </div>
+          <div class="flashcard-hint">Click to return to question</div>
         </div>
-        
-        <div class="flashcard-controls">
-          <button class="btn btn-outline-primary" id="prev-btn" disabled>
-            <i class="bi bi-arrow-left"></i> Previous
-          </button>
-          <button class="btn btn-outline-primary" id="next-btn">
-            Next <i class="bi bi-arrow-right"></i>
-          </button>
-        </div>
-        
-        <button class="btn btn-secondary shuffle-btn" id="shuffle-btn">
-          <i class="bi bi-shuffle"></i> Shuffle Cards
-        </button>
       </div>
     </div>
+    
+    <div class="timer-container">
+      <div class="timer-progress" id="timer"></div>
+    </div>
+    
+    <div class="flashcard-controls">
+      <button class="btn btn-outline-primary" id="prev-btn" disabled>
+        <i class="bi bi-arrow-left"></i> Previous
+      </button>
+      <button class="btn btn-outline-primary" id="next-btn">
+        Next <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+    
+    <button class="btn btn-secondary shuffle-btn" id="shuffle-btn">
+      <i class="bi bi-shuffle"></i> Shuffle Cards
+    </button>
+
+    <!-- Exit Button -->
+    <a href="../Games.php" class="btn btn-danger exit-btn" id="exitBtn">
+  <i class="bi bi-x-circle"></i> Exit
+</a>
+  </div>
+</div>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -440,7 +457,6 @@ window.addEventListener('beforeunload', function (e) {
 document.getElementById('submitBtn').addEventListener('click', function () {
   isQuizInProgress = false;
 });
-
 
   </script>
 </body>

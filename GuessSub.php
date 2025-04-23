@@ -21,109 +21,154 @@ $quizItems = json_decode($jsonData, true);
   <title>Nursing Thoughts</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="fsub.css" />
   <link rel="stylesheet" href="nav.css" />
   <style>
-    /* Welcome Modal Styles 
-    .welcome-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+html, body {
+  height: 100%;  /* Full height for the page */
+  margin: 0;     /* Remove default margin */
+  display: flex;
+  flex-direction: column;
+}
 
-    .welcome-content {
-      background-color: white;
-      top: 10 ;
-      padding: 40px;
-      border-radius: 15px;
-      text-align: center;
-      max-width: 500px;
-      width: 90%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
 
-    .welcome-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #f57c00;
-    }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
 
-    .welcome-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #333;
-    }
 
-    .welcome-text {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      line-height: 1.6;
-      color: #555;
-    }
+footer {
+  background-color: #f57c00;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;  
+  position: relative;
+  bottom: 0;
+}
 
-    .start-btn {
-      background-color: #f57c00;
-      color: white;
-      border: none;
-      padding: 10px 30px;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+footer a:hover {
+  text-decoration: underline;
+}
 
-    .start-btn:hover {
-      background-color: #e67300;
-    } */
+/* Welcome Modal Styles */
+.welcome-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-    .quiz-container {
-      max-width: 500px;
-      margin: 40px auto;
-      padding: 20px;
-      border: 2px solid #FF8F23;
-      border-radius: 10px;
-      background-color: rgb(255, 249, 241);
-      text-align: center;
-    }
+.welcome-content {
+  background-color: white;
+  top: 10 ;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-    .quiz-container img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
+.welcome-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f57c00;
+}
 
-    .quiz-container input[type="text"] {
-      width: 90%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
+.welcome-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
 
-    .quiz-container .btn {
-      margin: 5px;
-      background-color: #f57c00;
-      border: none;
-      color: #000;
-    }
+.welcome-text {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #555;
+}
 
-    .quiz-container .btn:hover {
-      background-color:rgb(248, 228, 200);
-    }
+.start-btn {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    .result-item {
-      text-align: left;
-      margin-top: 10px;
-      background: #fff3e6;
-      padding: 10px;
-      border-radius: 8px;
-    }
+.start-btn:hover {
+  background-color: #e67300;
+} 
+
+/* Quiz Container */
+.quiz-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #FF8F23;
+  border-radius: 10px;
+  background-color: rgb(255, 249, 241);
+  text-align: center;
+  flex-grow: 1;  /* This ensures the quiz container expands to fill space if needed */
+}
+
+.quiz-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.quiz-container input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.quiz-container .btn {
+  margin: 5px;
+  background-color: #f57c00;
+  border: none;
+  color: #000;
+}
+
+.quiz-container .btn:hover {
+  background-color: rgb(248, 228, 200);
+}
+
+.result-item {
+  text-align: left;
+  margin-top: 10px;
+  background: #fff3e6;
+  padding: 10px;
+  border-radius: 8px;
+}
+.custom-danger-btn {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border: 1px solid #dc3545 !important;
+}
+
+.custom-danger-btn:hover {
+    background-color: #bb2d3b !important;
+    border-color: #b02a37 !important;
+    color: white !important;
+}
+
+
   </style>
 </head>
 <body>
@@ -166,7 +211,7 @@ $quizItems = json_decode($jsonData, true);
     </nav>
     <div class="wrapper">
    
-    <!-- Welcome Modal
+    <!-- Welcome Modal -->
     <div class="welcome-modal" id="welcomeModal">
       <div class="welcome-content">
         <div class="welcome-title">MEDICAL TOOLS AND EQUIPMENT</div>
@@ -180,34 +225,38 @@ $quizItems = json_decode($jsonData, true);
         </div>
         <button class="start-btn" id="startBtn">Start</button>
       </div>
-    </div> -->
-
-    <!-- Quiz Container -->
-    <div class="quiz-container">
-      <div id="quiz-content">
-        <div id="question-counter" style="font-weight: bold; margin-bottom: 15px;"></div>
-        <h2>Guess the Medical Tools and Equipment</h2>
-        <img id="tool-image" src="" alt="Medical Tool">
-        <p id="description"></p>
-        <input type="text" id="user-answer" placeholder="Type your answer here">
-        <div id="feedback" style="margin-top: 10px;"></div>
-
-        <div>
-          <button class="btn" onclick="nextQuestion()">Next</button>
-          <button class="btn" onclick="finishQuiz()">Submit</button>
-        </div>
-      </div>
-
-      <!-- This will remain and be shown after Submit -->
-      <div id="result-section" style="display: none;">
-        <div id="score" style="font-weight: bold; margin-top: 20px;"></div>
-        <div id="review"></div>
-        <div class="d-flex justify-content-center gap-3 mt-4">
-          <button class="btn btn-warning px-4 fw-bold text-white" onclick="resetQuiz()" style="border-radius: 25px;">Try Again</button>
-          <a href="Homepage.php" class="btn btn-outline-warning px-4 fw-bold" style="border-radius: 25px;">Exit</a>
-        </div>
-      </div>
     </div>
+
+<!-- Quiz Container -->
+<div class="quiz-container position-relative">
+  <!-- Exit button positioned absolutely at top right -->
+  <a href="Games.php" class="btn custom-danger-btn position-absolute top-0 end-0 m-2">
+  <i class="fas fa-times"></i> Exit
+</a>
+
+  <div id="quiz-content">
+    <div id="question-counter" style="font-weight: bold; margin-bottom: 15px;"></div>
+    <h2>Guess the Medical Tools and Equipment</h2>
+    <img id="tool-image" src="" alt="Medical Tool">
+    <p id="description"></p>
+    <input type="text" id="user-answer" placeholder="Type your answer here">
+    <div id="feedback" style="margin-top: 10px;"></div>
+
+    <div>
+      <button class="btn" onclick="nextQuestion()">Next</button>
+      <button class="btn" onclick="finishQuiz()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Result section -->
+  <div id="result-section" style="display: none;">
+    <div id="score" style="font-weight: bold; margin-top: 20px;"></div>
+    <div id="review"></div>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button class="btn btn-warning px-4 fw-bold text-white" onclick="resetQuiz()" style="border-radius: 25px;">Try Again</button>
+    </div>
+  </div>
+</div>
 
     <!-- Footer (DO NOT MODIFY) -->
     <footer class="footer">
@@ -342,7 +391,44 @@ $quizItems = json_decode($jsonData, true);
       loadQuestion();
     }
 
-    window.onload = loadQuestion;
+      // Show the welcome modal on page load
+  window.onload = function() {
+    const modal = document.getElementById('welcomeModal');
+    const startBtn = document.getElementById('startBtn');
+    const quizContent = document.getElementById('quiz-content');
+
+    // Show the modal when the page loads
+    modal.style.display = 'flex';
+
+    // When the user clicks "Start", hide the modal and show the quiz
+    startBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      quizContent.style.display = 'block';
+      loadQuestion();
+    });
+  }
+    window.onload = function() {
+      const modal = document.getElementById('welcomeModal');
+      const startBtn = document.getElementById('startBtn');
+      const quizContent = document.getElementById('quiz-content');
+
+      // Show the modal when the page loads
+      modal.style.display = 'flex';
+
+      // When the user clicks "Start", hide the modal and show the quiz
+      startBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        quizContent.style.display = 'block';
+        loadQuestion();
+      });
+    }
+
+    // Warn before leaving or reloading the page
+    window.addEventListener("beforeunload", function (e) {
+      e.preventDefault(); 
+      e.returnValue = ''; 
+    });
+
   </script>
 </body>
 </html>
