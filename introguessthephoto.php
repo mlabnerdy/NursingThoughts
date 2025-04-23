@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
+<body style="overflow: hidden;">
 
 <div class="wrapper">
     <!-- Navigation (DO NOT MODIFY) -->
@@ -54,26 +55,22 @@ session_start();
     </nav>
 
 
-  <!-- Main Content -->
-  <div class="main-content position-relative">
-    <a href="Games.php" class="btn btn-back">Back</a>
-    <div class="quiz-container">
-      <h1>MEDICAL TOOLS AND EQUIPMENT</h1>
-      <div class="quiz-description">
-        <p><strong>Welcome to Nursing Thoughts Medical Tools and Equipment Familiarization Activity</strong></p>
-        <p>
+  <!-- Welcome Modal -->
+  <div class="welcome-modal" id="welcomeModal">
+      <div class="welcome-content">
+        <div class="welcome-title">MEDICAL TOOLS AND EQUIPMENT</div>
+        <div class="welcome-subtitle">Welcome to Nursing Thoughts Medical Tools and Equipment Familiarization Activity</div>
+        <div class="welcome-text">
+            This is a practice mode designed to help you review and recognize common medical tools and equipment through images.
+            <br><br>
+            Your score here won’t affect your leaderboard rank. This is purely for learning and self-review.
+            <br><br>
+            Take your time, guess the correct tool based on the image, and reinforce your nursing knowledge in a fun and interactive way.
         
-        This is a practice mode designed to help you review and recognize common medical tools and equipment through images.
-
-        Your score here won’t affect your leaderboard rank. This is purely for learning and self-review.
-        Take your time, guess the correct tool based on the image, and reinforce your nursing knowledge in a fun and interactive way.
-
-
+        </div>
+        <button class="start-btn" id="startBtn">Start</button>
       </div>
-      <button class="btn-start" onclick="window.location.href='GuessSub.php'">Start</button>
     </div>
-  </div>
-
 
   <!-- Footer -->
   <footer class="footer">

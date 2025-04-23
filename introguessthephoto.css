@@ -1,60 +1,58 @@
-body {
-    background-color: #eeeeee;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-  }
-  
-  .main-content {
-    min-height: calc(100vh - 112px); 
+/* Welcome Modal Styles */
+.welcome-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
-    position: relative;
-  }
-  
-  .quiz-container {
-    max-width: 600px;
-    padding: 30px;
-    border: 2px solid #d79b4c;
+    align-items: center;
+    z-index: 1000;
+}
+
+.welcome-content {
     background-color: white;
-    border-radius: 8px;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-  h1 {
-    font-weight: 700;
+.welcome-title {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 20px;
-  }
+    color: #f57c00;
+}
 
-  .quiz-description {
+.welcome-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     color: #333;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
+}
 
-  .btn-start {
-    background-color: #d79b4c;
+.welcome-text {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.start-btn {
+    background-color: #f57c00;
     color: white;
     border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-  }
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-  .btn-start:hover {
-    background-color: #c3873e;
-  }
-
-  .btn-back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #d79b4c;
-    color: black;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
+.start-btn:hover {
+    background-color: #e67300;
+}

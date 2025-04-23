@@ -114,7 +114,7 @@ require 'db_conn.php';
                 </div>
                 <h3 class="card-title">Guess the Photo</h3>
                 <p class="card-text">Learn through visual identification</p>
-                <a href="introguessthephoto.php" class="btn btn-primary">Start Game</a>
+                <a href="GuessSub.php" class="btn btn-primary">Start</a>
               </div>
             </div>
           </div>
