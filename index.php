@@ -55,20 +55,22 @@ session_start();
 
     <?php
     $faces = [
+      "Banday, Khazyneth B.",
+      "Bardon, Glenizze Jade M.",
+      "Bautista, Shaira Denise S.",
       "Madarang, Maria Carmen A.",
+      "Manago, Zcarina Deborah D.",
       "Paway, Mariel A.",
       "Rebusano, Angela M.",
-      "Manago, Zcarina Deborah D.",
       "Villeno, Isabella Nicole D.",
       "Yanto, Fearly Ann A.",
       "Zamudio, Rosenie B.",
-      "Banday, Khazyneth B.",
-      "Bardon, Glenizze Jade M.",
-      "Bautista, Shaira Denise S."
+      
     ];
 
     foreach ($faces as $name) {
       $filename = "Image/Members/$name.png";
+      
       echo '
       <div class="col-md-4 col-lg-3 text-center">
         <img src="'.$filename.'" alt="'.$name.'" class="rounded-circle shadow" style="width: 150px; height: 150px; object-fit: cover;">
