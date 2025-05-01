@@ -40,7 +40,9 @@ session_start();
         <input type="text" name="fullname" id="fullname" required>
 
         <label>Email <span>*</span></label>
-        <input type="email" name="email" id="email" required>
+        <label>Email <span>*</span></label>
+        <input type="email" name="email" id="email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Only Gmail addresses are allowed (e.g., example@gmail.com)">
+
 
         <label>School ID <span>*</span></label>
         <input type="text" name="school_id" id="school_id" required pattern="^[0-9\-]+$" title="Only numbers and dashes are allowed">
@@ -70,10 +72,11 @@ session_start();
 
   <!-- ✅ JS VALIDATION -->
   <script>
-    function validateForm() {
+  function validateForm() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirm_password").value;
     const schoolId = document.getElementById("school_id").value;
+    const email = document.getElementById("email").value;
 
     const errorContainer = document.querySelector(".error-message");
     if (errorContainer) errorContainer.remove(); // remove old error if any
@@ -91,6 +94,13 @@ session_start();
       return false;
     }
 
+    // Gmail-only email check
+    const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!gmailPattern.test(email)) {
+      showError("Only Gmail addresses are allowed!");
+      return false;
+    }
+
     return true;
   }
 
@@ -100,7 +110,7 @@ session_start();
     msg.innerText = message;
     document.querySelector("form").prepend(msg);
   }
-  </script>
+</script>
 
 </body>
 </html>
