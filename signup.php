@@ -40,13 +40,10 @@ session_start();
         <input type="text" name="fullname" id="fullname" required>
 
         <label>Email <span>*</span></label>
-        <label>Email <span>*</span></label>
-        <input type="email" name="email" id="email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Only Gmail addresses are allowed (e.g., example@gmail.com)">
-
+        <input type="email" name="email" id="email" required title="Only Gmail addresses are allowed (e.g., example@gmail.com)">
 
         <label>School ID <span>*</span></label>
         <input type="text" name="school_id" id="school_id" required pattern="^[0-9\-]+$" title="Only numbers and dashes are allowed">
-
 
         <label>Year Level <span>*</span></label>
         <select name="year_level" id="year_level" required>
