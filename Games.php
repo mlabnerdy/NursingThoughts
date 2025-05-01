@@ -126,7 +126,7 @@ require 'db_conn.php';
     <!-- Footer -->
     <footer class="footer">
       <div>@NursingThoughts</div>
-      <a href="AboutUs.php">About Us</a>
+      <a href="./aboutus.php">About Us</a>
     </footer>
   </div>
 

@@ -131,7 +131,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
       <!-- Footer -->
   <footer class="footer">
     <div>@NursingThoughts</div>
-    <a href="AboutUs.php">About Us</a>
+    <a href="./aboutus.php">About Us</a>
   </footer>
 </div>
 
