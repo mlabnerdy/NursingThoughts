@@ -12,7 +12,7 @@ session_start();
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <link rel="icon" type="image/x-icon" href="./IMAGE/Members/Zamudio, Rosenie B..png">
+  <link rel="icon" type="image/x-icon" href="./IMAGE/nurse.png">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./index.css">
 

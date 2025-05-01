@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./login.css">
+    <link rel="icon" type="image/x-icon" href="../IMAGE/nurse.png">
 </head>
 <body>
 
