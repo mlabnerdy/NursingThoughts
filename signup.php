@@ -7,6 +7,8 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <title>Signup</title>
+  <link rel="icon" type="image/x-icon" href="./IMAGE/Members/Zamudio, Rosenie B..png">
+
   <link rel="stylesheet" href="./signup.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
