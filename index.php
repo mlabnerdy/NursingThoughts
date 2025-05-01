@@ -30,7 +30,7 @@ session_start();
 
 <!-- Video Background -->
 <video autoplay muted loop id="bg-video">
-  <source src="Image/For bg.mp4" type="video/mp4">
+  <source src="./IMAGE/For bg.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -69,7 +69,7 @@ session_start();
     ];
 
     foreach ($faces as $name) {
-      $filename = "./Image/Members/$name.png";
+      $filename = "./IMAGE/Members/$name.png";
       
       echo '
       <div class="col-md-4 col-lg-3 text-center">
