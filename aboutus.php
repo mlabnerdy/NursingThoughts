@@ -140,7 +140,7 @@ require 'db_conn.php';
     ];
 
     foreach ($faces as $name) {
-      $filename = "Image/Members/$name.png";
+      $filename = "IMAGE/Members/$name.png";
       echo '
       <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
         <div class="member-card text-center">
