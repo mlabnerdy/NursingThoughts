@@ -183,7 +183,7 @@ Your browser does not support HTML5 video.
 
 <!-- Forgot Password Form -->
 <div class="login-container">
-<form class="login-box shadow-lg rounded" method="POST" action="fpass.php">
+<form class="login-box shadow-lg rounded" method="POST" action="fpass.php" id="resetForm">
     <h2 class="text-center fw-bold">FORGOT PASSWORD</h2>
 
     <?php
@@ -202,12 +202,36 @@ Your browser does not support HTML5 video.
     <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
     </div>
 
-    <button type="submit" class="btn login-btn w-100">Send Reset Link</button>
+    <button type="submit" class="btn login-btn w-100" id="submitBtn">
+        <span class="button-text">Send Reset Link</span>
+        <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
+    </button>
 
     <div class="mt-3 text-center">
     <a href="login.php" class="text-decoration-none text-warning small">Back to Login</a>
     </div>
 </form>
+
+<script>
+document.getElementById('resetForm').addEventListener('submit', function() {
+    // Get button and spinner elements
+    const button = document.getElementById('submitBtn');
+    const buttonText = button.querySelector('.button-text');
+    const spinner = document.getElementById('loadingSpinner');
+    
+    // Disable the button to prevent multiple submissions
+    button.disabled = true;
+    
+    // Show the spinner
+    spinner.classList.remove('d-none');
+    
+    // Change button text (optional)
+    buttonText.textContent = 'Processing...';
+    
+    // Form will submit normally
+});
+</script>
+
 </div>
 
 <!-- Bootstrap JS -->
