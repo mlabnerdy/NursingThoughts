@@ -43,7 +43,8 @@ session_start();
         <input type="email" name="email" id="email" required>
 
         <label>School ID <span>*</span></label>
-        <input type="text" name="school_id" id="school_id" required>
+        <input type="text" name="school_id" id="school_id" required pattern="^[0-9\-]+$" title="Only numbers and dashes are allowed">
+
 
         <label>Year Level <span>*</span></label>
         <select name="year_level" id="year_level" required>
@@ -70,21 +71,35 @@ session_start();
   <!-- ✅ JS VALIDATION -->
   <script>
     function validateForm() {
-      const password = document.getElementById("password").value;
-      const confirm = document.getElementById("confirm_password").value;
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm_password").value;
+    const schoolId = document.getElementById("school_id").value;
 
-      const existingError = document.querySelector(".error-message");
-      if (existingError) existingError.remove(); // remove old error if any
+    const errorContainer = document.querySelector(".error-message");
+    if (errorContainer) errorContainer.remove(); // remove old error if any
 
-      if (password !== confirm) {
-        const msg = document.createElement("div");
-        msg.className = "error-message";
-        msg.innerText = "Passwords do not match!";
-        document.querySelector("form").prepend(msg);
-        return false;
-      }
-      return true;
+    // Password match check
+    if (password !== confirm) {
+      showError("Passwords do not match!");
+      return false;
     }
+
+    // School ID format check: only digits and dashes
+    const schoolIdPattern = /^[0-9\-]+$/;
+    if (!schoolIdPattern.test(schoolId)) {
+      showError("School ID must contain only numbers and dashes!");
+      return false;
+    }
+
+    return true;
+  }
+
+  function showError(message) {
+    const msg = document.createElement("div");
+    msg.className = "error-message";
+    msg.innerText = message;
+    document.querySelector("form").prepend(msg);
+  }
   </script>
 
 </body>
