@@ -14,7 +14,7 @@ session_start();
 
   <!-- Background Video -->
   <video autoplay muted loop id="bg-video">
-    <source src="IMAGE/for bg.mp4" type="video/mp4">
+    <source src="IMAGE/For bg.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
 
