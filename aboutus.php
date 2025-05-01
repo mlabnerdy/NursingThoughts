@@ -21,6 +21,7 @@ require 'db_conn.php';
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="../IMAGE/nurse.png">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./fsub.css" />
@@ -30,7 +31,7 @@ require 'db_conn.php';
   <!-- Internal Styling for Title and Cards -->
   <style>
    .main-title {
-  font-family: 'Great Vibes', cursive;
+    font-family: 'Fredoka', sans-serif;
   font-size: 3rem;
   color: #f57c00; /* Nice orange, same as your theme */
   text-shadow: 2px 2px 5px rgba(0,0,0,0.1);

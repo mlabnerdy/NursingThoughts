@@ -173,6 +173,14 @@ footer a:hover {
     color: white !important;
 }
 
+  /* Responsive for smaller screens */
+  @media (max-width: 576px) {
+      #aboutUs img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
 
   </style>
 </head>
@@ -214,6 +222,7 @@ footer a:hover {
         </div>
       </div>
     </nav>
+
     <div class="wrapper">
    
     <!-- Welcome Modal -->
@@ -269,6 +278,8 @@ footer a:hover {
       <a href="./aboutus.php">About Us</a>
     </footer>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     const items = <?php echo json_encode($quizItems); ?>;
