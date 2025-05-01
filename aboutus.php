@@ -96,10 +96,10 @@ require 'db_conn.php';
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="Homepage.php"><i class="bi bi-house-door me-1"></i> Home</a>
+          <a class="nav-link active" href="Homepage.php"><i class="bi bi-house-door me-1"></i> Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="Games.php"><i class="bi bi-joystick me-1"></i> Games</a>
+          <a class="nav-link" href="Games.php"><i class="bi bi-joystick me-1"></i> Games</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Leaderboard.php"><i class="bi bi-trophy me-1"></i> Leaderboard</a>
