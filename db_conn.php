@@ -3,7 +3,7 @@
 $servername = 'srv1786.hstgr.io';
 $dbname = 'u572625467_thoughts';
 $username = 'u572625467_thoughts';
-$password = ':5kkw#nI'; // your actual password
+$password = 'M#2BB0f]8D'; // your actual password
 
 try {
      // Create a new PDO instance
