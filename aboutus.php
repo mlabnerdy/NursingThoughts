@@ -22,9 +22,9 @@ require 'db_conn.php';
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="fsub.css" />
-  <link rel="stylesheet" href="nav.css" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="./fsub.css" />
+  <link rel="stylesheet" href="./nav.css" />
+  <link rel="stylesheet" href="./index.css" />
 
   <!-- Internal Styling for Title and Cards -->
   <style>

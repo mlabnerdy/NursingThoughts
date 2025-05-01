@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->addAddress($email);
 
             // This link should go to resetpass.php instead of fpass.php
-            $resetLink = "http://localhost/NursingThoughts/resetpass.php?token=" . urlencode($token);
+            $resetLink = "http://localhost/resetpass.php?token=" . urlencode($token);
             $mail->isHTML(true);
             $mail->Subject = 'Reset Your Password';
             $mail->Body = "Hello,<br><br>Click the link below to reset your password:<br><a href='$resetLink'>$resetLink</a><br><br>This link will expire in 15 minutes.";
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
 

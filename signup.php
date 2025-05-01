@@ -7,7 +7,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <title>Signup</title>
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="./signup.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
