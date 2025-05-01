@@ -51,22 +51,108 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Password = 'ryac rnob orsv eoun'; // Your App Password (if 2FA enabled)
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
             $mail->Port = 587;  // Port for TLS
-
-            $mail->setFrom('your@email.com', 'Nursing Thoughts');
+        
+            $mail->setFrom('nursingthoughtfsy@gmail.com', 'Nursing Thoughts'); // Changed to match SMTP username
             $mail->addAddress($email);
-
+        
             // This link should go to resetpass.php instead of fpass.php
             $resetLink = "https://nursingthoughts.site/resetpass.php?token=" . urlencode($token);
             $mail->isHTML(true);
             $mail->Subject = 'Reset Your Password';
-            $mail->Body = "Hello,<br><br>Click the link below to reset your password:<br><a href='$resetLink'>$resetLink</a><br><br>This link will expire in 15 minutes.";
-
+            
+            // Enhanced HTML email body
+            $mail->Body = '<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Password Reset</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        line-height: 1.6;
+                        color: #333;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        padding: 20px;
+                    }
+                    .email-container {
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        padding: 25px;
+                        background-color: #f9f9f9;
+                    }
+                    .header {
+                        text-align: center;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid #eee;
+                        margin-bottom: 20px;
+                    }
+                    .button {
+                        display: inline-block;
+                        background-color: #4285f4;
+                        color: white;
+                        text-decoration: none;
+                        padding: 10px 20px;
+                        border-radius: 4px;
+                        margin: 20px 0;
+                    }
+                    .footer {
+                        margin-top: 30px;
+                        font-size: 12px;
+                        color: #777;
+                        text-align: center;
+                        border-top: 1px solid #eee;
+                        padding-top: 15px;
+                    }
+                    .expiry-notice {
+                        font-style: italic;
+                        color: #666;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="email-container">
+                    <div class="header">
+                        <h2>Password Reset Request</h2>
+                    </div>
+                    
+                    <p>Hello,</p>
+                    
+                    <p>We received a request to reset your password for your Nursing Thoughts account. Please click the button below to create a new password:</p>
+                    
+                    <div style="text-align: center;">
+                        <a href="' . $resetLink . '">
+                            <button class="button">
+                                Reset My Password
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <p class="expiry-notice">This link will expire in 15 minutes for security reasons.</p>
+                    
+                    <p>If you didn\'t request a password reset, you can safely ignore this email.</p>
+                    
+                    <p>If the button above doesn\'t work, you can copy and paste the following link into your browser:</p>
+                    <p>' . $resetLink . '</p>
+                    
+                    <div class="footer">
+                        <p>This is an automated message from Nursing Thoughts. Please do not reply to this email.</p>
+                    </div>
+                </div>
+            </body>
+            </html>';
+            
+            // Add plain text alternative for email clients that don't support HTML
+            $mail->AltBody = "Hello,\n\nClick the link below to reset your password:\n$resetLink\n\nThis link will expire in 15 minutes.";
+        
             $mail->send();
-
+        
             $_SESSION['success_message'] = "Reset link sent. Check your inbox or spam folder.";
         } catch (Exception $e) {
             $_SESSION['error_message'] = "Could not send reset email. Error: " . $mail->ErrorInfo;
         }
+        
     } else {
         $_SESSION['error_message'] = "No account found with that email.";
     }
