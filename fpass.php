@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->addAddress($email);
 
             // This link should go to resetpass.php instead of fpass.php
-            $resetLink = "http://localhost/resetpass.php?token=" . urlencode($token);
+            $resetLink = "https://nursingthoughts.site/resetpass.php?token=" . urlencode($token);
             $mail->isHTML(true);
             $mail->Subject = 'Reset Your Password';
             $mail->Body = "Hello,<br><br>Click the link below to reset your password:<br><a href='$resetLink'>$resetLink</a><br><br>This link will expire in 15 minutes.";
