@@ -67,16 +67,19 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: auto; /* allow scrolling if needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
 .welcome-content {
   background-color: white;
-  top: 10 ;
   padding: 40px;
   border-radius: 15px;
   text-align: center;
   max-width: 500px;
   width: 90%;
+  max-height: 90vh; /* restrict height to allow scrolling */
+  overflow-y: auto; /* enable vertical scrolling */
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -99,6 +102,7 @@ footer a:hover {
   line-height: 1.6;
   color: #555;
 }
+
 
 .start-btn {
   background-color: #f57c00;
