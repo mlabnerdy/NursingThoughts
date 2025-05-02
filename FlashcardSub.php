@@ -83,7 +83,7 @@ require 'db_conn.php';
           <a href="Flashcard/be.php"><button class="subject-btn">Bio-Ethics</button></a>
           <a href="Flashcard/ndt.php"><button class="subject-btn">Nutrition and Diet Therapy</button></a>
           <a href="Flashcard/pharma.php"><button class="subject-btn">Pharmacology</button></a>
-          <a href="FLashcard/mt.php"><button class="subject-btn">Medical Terminologies</button></a>
+          <a href="Flashcard/mt.php"><button class="subject-btn">Medical Terminologies</button></a>
           <a href="Flashcard/anp.php"><button class="subject-btn">Anatomy and Physiology</button></a>
           <a href="Flashcard/mtc.php"><button class="subject-btn">Maternal and Child</button></a>
           <a href="Flashcard/chn.php"><button class="subject-btn">Community Health Nursing</button></a>
