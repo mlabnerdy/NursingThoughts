@@ -178,55 +178,50 @@ footer a:hover {
 .modal {
   display: none;
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  padding: 1rem;
-  z-index: 2000;
-  display: flex;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  padding: 1rem; /* ensures spacing from top */
 }
 
+.modal.show {
+  display: flex; /* only when showing */
+}
 
 .modal-content {
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 30px 20px;
   border-radius: 12px;
   width: 100%;
-  max-width: 400px;
+  max-width: 360px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-  animation: fadeIn 0.3s ease;
-  margin-top: 60px; /* Adjust based on navbar height */
 }
 
 
-
 .modal-content p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 20px;
+  font-size: 16px;
   color: #333;
 }
 
 .modal-buttons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
+  justify-content: space-around;
 }
 
 .confirm-btn,
 .cancel-btn {
-  flex: 1 1 120px;
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -249,22 +244,14 @@ footer a:hover {
   background-color: #bbb;
 }
 
-/* Optional fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 
   /* Responsive for smaller screens */
   @media (max-width: 576px) {
       #aboutUs img {
         width: 120px;
         height: 120px;
-        margin-top: 60px;
       }
     }
-    
 
 
   </style>
@@ -360,7 +347,7 @@ footer a:hover {
 <!-- Confirmation Modal -->
 <div id="confirmationModal" class="modal">
   <div class="modal-content">
-    <p>Are you sure you want to submit the quiz?</p>
+    <p>Are you sure you want to submit the answers?</p>
     <div class="modal-buttons">
       <button class="confirm-btn" onclick="confirmSubmit()">Yes, Submit</button>
       <button class="cancel-btn" onclick="closeConfirmationModal()">Cancel</button>
@@ -541,13 +528,16 @@ footer a:hover {
       e.returnValue = ''; 
     });
 
-    function openConfirmationModal() {
-  document.getElementById("confirmationModal").style.display = "block";
+function openConfirmationModal() {
+  const modal = document.getElementById('confirmationModal');
+  modal.classList.add('show');
 }
 
 function closeConfirmationModal() {
-  document.getElementById("confirmationModal").style.display = "none";
+  const modal = document.getElementById('confirmationModal');
+  modal.classList.remove('show');
 }
+
 
 function confirmSubmit() {
   closeConfirmationModal();
