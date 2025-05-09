@@ -45,15 +45,6 @@ session_start();
         <label>School ID <span>*</span></label>
         <input type="text" name="school_id" id="school_id" required pattern="^[0-9\-]+$" title="Only numbers and dashes are allowed">
 
-        <label>Year Level <span>*</span></label>
-        <select name="year_level" id="year_level" required>
-          <option value="">-- Select Year Level --</option>
-          <option value="1st year">1st year</option>
-          <option value="2nd year">2nd year</option>
-          <option value="3rd year">3rd year</option>
-          <option value="4th year">4th year</option>
-        </select>
-
         <label>Password <span>*</span></label>
         <input type="password" name="password" id="password" required>
 
@@ -84,12 +75,23 @@ session_start();
       return false;
     }
 
-    // School ID format check: only digits and dashes
-    const schoolIdPattern = /^[0-9\-]+$/;
-    if (!schoolIdPattern.test(schoolId)) {
-      showError("School ID must contain only numbers and dashes!");
-      return false;
-    }
+// School ID format check: only digits and dashes
+const schoolIdPattern = /^[0-9\-]+$/;
+if (!schoolIdPattern.test(schoolId)) {
+  showError("School ID must contain only numbers and dashes!");
+  return false;
+}
+
+// Check if School ID has exactly 6 digits (excluding dashes)
+function isValidSchoolId(schoolId) {
+  const digitsOnly = schoolId.replace(/-/g, '');
+  return /^\d{6}$/.test(digitsOnly);
+}
+
+if (!isValidSchoolId(schoolId)) {
+  showError("School ID must contain exactly 6 digits (excluding dashes)!");
+  return false;
+}
 
     // Gmail-only email check
     const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;

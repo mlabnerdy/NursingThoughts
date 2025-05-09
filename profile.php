@@ -101,23 +101,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <label for="schoolid">School ID</label>
                     <input type="text" id="schoolid" name="schoolid" value="<?= htmlspecialchars($user['schoolID']) ?>" readonly>
                 </div>
-
-                <div class="form-group">
-    <label for="yearlevel">Year Level</label>
-    <select id="yearlevel" name="yearlevel" required>
-        <option value="">Select Year Level</option>
-        <?php
-        $suffixes = ['1' => 'st', '2' => 'nd', '3' => 'rd', '4' => 'th', '5' => 'th'];
-        for ($i = 1; $i <= 5; $i++) {
-            $suffix = $suffixes[$i];
-            $selected = ($user['YrLvl'] == $i) ? 'selected' : '';
-            echo "<option value=\"$i\" $selected>{$i}{$suffix} Year</option>";
-        }
-        ?>
-    </select>
-</div>
-
-
+                
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>

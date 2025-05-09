@@ -123,7 +123,6 @@ foreach ($subjectsPerformance as $subject) {
                 <h5><?= htmlspecialchars($performer['fullName']) ?></h5>
                 <div class="performer-details">
                   <div><i class="bi bi-person-badge me-1"></i> <?= htmlspecialchars($performer['schoolID']) ?></div>
-                  <div><i class="bi bi-book me-1"></i> Year <?= htmlspecialchars($performer['YrLvL']) ?></div>
                   <div class="mt-2">
                     <span class="badge bg-warning text-dark">
                       <i class="bi bi-star-fill me-1"></i> <?= htmlspecialchars($performer['total_score']) ?> pts

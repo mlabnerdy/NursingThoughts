@@ -175,6 +175,69 @@ footer a:hover {
     color: white !important;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirm-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-btn {
+  background-color: #FF8F23;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #e57f1f;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #bbb;
+}
+
+
   /* Responsive for smaller screens */
   @media (max-width: 576px) {
       #aboutUs img {
@@ -260,7 +323,7 @@ footer a:hover {
 
     <div>
       <button class="btn" onclick="nextQuestion()">Next</button>
-      <button class="btn" onclick="finishQuiz()">Submit</button>
+     <button class="btn" onclick="openConfirmationModal()">Submit</button>
     </div>
   </div>
 
@@ -270,6 +333,17 @@ footer a:hover {
     <div id="review"></div>
     <div class="d-flex justify-content-center gap-3 mt-4">
       <button class="btn btn-warning px-4 fw-bold text-white" onclick="resetQuiz()" style="border-radius: 25px;">Try Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <p>Are you sure you want to submit the quiz?</p>
+    <div class="modal-buttons">
+      <button class="confirm-btn" onclick="confirmSubmit()">Yes, Submit</button>
+      <button class="cancel-btn" onclick="closeConfirmationModal()">Cancel</button>
     </div>
   </div>
 </div>
@@ -446,6 +520,20 @@ footer a:hover {
       e.preventDefault(); 
       e.returnValue = ''; 
     });
+
+    function openConfirmationModal() {
+  document.getElementById("confirmationModal").style.display = "block";
+}
+
+function closeConfirmationModal() {
+  document.getElementById("confirmationModal").style.display = "none";
+}
+
+function confirmSubmit() {
+  closeConfirmationModal();
+  finishQuiz(); // call your actual quiz submission function
+}
+
 
   </script>
 </body>
