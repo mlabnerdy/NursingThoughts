@@ -178,43 +178,55 @@ footer a:hover {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 1rem;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
 }
+
 
 .modal-content {
   background-color: #fff;
-  margin: 15% auto;
-  padding: 30px 20px;
+  padding: 1.5rem;
   border-radius: 12px;
-  width: 90%;
-  max-width: 360px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease;
+  margin-top: 60px; /* Adjust based on navbar height */
 }
 
+
+
 .modal-content p {
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   color: #333;
 }
 
 .modal-buttons {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .confirm-btn,
 .cancel-btn {
-  padding: 10px 20px;
+  flex: 1 1 120px;
+  padding: 10px;
   border: none;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -237,14 +249,22 @@ footer a:hover {
   background-color: #bbb;
 }
 
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
   /* Responsive for smaller screens */
   @media (max-width: 576px) {
       #aboutUs img {
         width: 120px;
         height: 120px;
+        margin-top: 60px;
       }
     }
+    
 
 
   </style>
